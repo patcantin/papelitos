@@ -5,7 +5,13 @@
   top: 16px;
   border-radius: 50%;
   width: 30px;
-  background-color: red;
+  background-color: rgba(207, 48, 114, 0.39);
+}
+
+.user-name{
+  position: absolute;
+  right: 16px;
+  top: 16px;
 }
 .nav-link{
   text-decoration: none;
