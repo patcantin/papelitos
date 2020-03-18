@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     @game = Game.new
     @game.user = current_user
     if @game.save!
-      redirect_to games_path
+      redirect_to new_game_game_word_path(@game.id)
     else
       render :index
     end
