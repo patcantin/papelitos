@@ -3,7 +3,7 @@
       <% if @current_user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, class: "user-avatar" %>
       <% else %>
-        <p><%= current_user.name %></p>
+        <p class="user-name"><%= current_user.name %></p>
     <% end %>
     <p><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %></p>
 <% end %>
