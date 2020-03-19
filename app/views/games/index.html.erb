@@ -1,4 +1,5 @@
 
+<!-- PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "index_logo" %>
 <!-- <div class="create" align="center"><a class="buttons">Create a game</a></div>
 <div class="key"></div>
@@ -8,6 +9,15 @@
   <input type="text" class="enter_key rem">
 </div> -->
 
+<!-- BUTTONS  -->
   <%= simple_form_for @game do |f| %>
-    <div align="center"><%= f.submit "Create a game", class: "main-button" %></div>
+    <div align="center">
+
+      <!-- Create button -->
+      <%= f.submit "Create a game", class: "buttons" %>
+
+       <!-- Join button -->
+      <%= f.submit "Join game", class: "buttons" %>
+    </div>
   <% end %>
+<!-- BUTTONS  -->

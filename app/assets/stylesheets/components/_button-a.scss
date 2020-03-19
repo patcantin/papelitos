@@ -1,13 +1,14 @@
 .buttons {
-color: #fff !important;
+color: #FFA372 !important;
 text-transform: uppercase;
 text-decoration: none;
-background: black;
+background: none;
 padding: 10px;
 margin: 30px 0 30px 0;
-border-radius: 5px;
 display: inline-block;
-border: none;
+border-radius: 8px;
+border: solid 1px;
+border-color: #FFA372;
 transition: all 0.4s ease 0s;
 width: 200px;
 }
