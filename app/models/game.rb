@@ -11,6 +11,7 @@ class Game < ApplicationRecord
   before_save :generate_key
 
   private
+
   def generate_key
     result = rand(1000..9999)
     self.assign_attributes(key_number: result)

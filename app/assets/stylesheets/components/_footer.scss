@@ -1,15 +1,22 @@
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+.footer{
+  position: relative;
   height: 45px;
-  background-color: rgba(207, 48, 114, 0.39);
-  color: #DD6E9D;
-.fa-cog, .fa-question{
-  padding: 5px 20px 0 20px;
+  width: 100%;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: rgba(207, 48, 114, 0.39);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-top: 100%;
+
+  .fa-cog, .fa-question, .fa-sign-out-alt{
+    font-size: 30px;
+    color: #E283AB;
+    text-align: center;
   }
-.settings_icon{
-  float: right;
 }
-}
+
