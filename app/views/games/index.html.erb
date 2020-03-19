@@ -9,5 +9,13 @@
 </div> -->
 
   <%= simple_form_for @game do |f| %>
-    <div align="center"><%= f.submit "Create a game", class: "main-button" %></div>
+    <div align="center"><%= f.submit "CREATE GAME", class: "main-button" %></div>
   <% end %>
+
+  <div id="join-section" align="center">
+  <button class="main-button join-button" type="button">JOIN GAME</button>
+    <div align="center" class="join-form hide-form">
+      <input type="text"><br>
+      <button>GO</button>
+    </div>
+  </div>
