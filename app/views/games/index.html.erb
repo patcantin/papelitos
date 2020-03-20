@@ -12,19 +12,20 @@
   <% end %>
 
   <div id="join-section" align="center">
-    <!-- Join button  -->
-     <button class="buttons join-button" type="button">JOIN GAME</button>
-      <!--   hidden form until js join-button click -->
-     <div align="center" class="join-form hide-form">
-       <input type="text"><br>
-     </div>
-  </div>
 
-  <!-- Bottom right button  -->
-  <div id="bottom-right">
-    <button class="btn-bottom-right">Next</button>
-    <div><%= image_tag "", class: "fas fa-angle-double-right" %>
-</div>
+  <!-- Join button -->
+  <button class="buttons join-button" type="button">JOIN GAME</button>
+    <div align="center" class="join-form hide-form">
+      <%= form_tag game_users_path, method: :post do %>
+        <%= number_field_tag :key_number, nil, max: 9999 %>
+      <!-- Validate key + create user by join button -->
+         <!-- Bottom right button  -->
+        <div id="bottom-right">
+          <%= submit_tag 'GO', class: "btn-bottom-right" %>
+            <div><%= image_tag "", class: "fas fa-angle-double-right" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-
 <!-- BUTTONS  -->
