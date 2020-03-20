@@ -1,5 +1,7 @@
+
+// ---- Create and Join Buttons ----
 .buttons {
-color: #FFA372 !important;
+color: $warm-orange !important;
 text-transform: uppercase;
 text-decoration: none;
 background: none;
@@ -8,7 +10,7 @@ margin: 30px 0 30px 0;
 display: inline-block;
 border-radius: 8px;
 border: solid 1px;
-border-color: #FFA372;
+border-color: $warm-orange;
 transition: all 0.4s ease 0s;
 width: 200px;
 }
@@ -23,4 +25,20 @@ transition: all 0.4s ease 0s;
 }
 
 
+// ------ Bottom right button  ------
+
+#bottom-right{
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  right: 16px;
+  top: 90%;
+  width: 40px;
+
+ .btn-bottom-right{
+  background: none;
+  color: $warm-orange;
+  border: none;
+  }
+}
 
