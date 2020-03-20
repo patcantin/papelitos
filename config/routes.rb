@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :show, :new, :create, :update] do
     resources :game_words, only: %i(new create)
     resources :game_teams, only: %i(update)
-    resources :game_users, only: %i(index new create destroy)
+    resources :game_users, only: %i(index)
   end
+  resources :game_users, only: %i(create)
 end
+
