@@ -15,7 +15,9 @@
   <div id="join-section" align="center">
   <button class="main-button join-button" type="button">JOIN GAME</button>
     <div align="center" class="join-form hide-form">
-      <input type="text"><br>
-      <button>GO</button>
+      <%= form_tag game_users_path, method: :post do %>
+        <%= number_field_tag :key_number, nil, max: 9999 %>
+        <div align="center"><%= submit_tag 'GO', class: "buttons" %></div>
+      <% end %>
     </div>
   </div>
