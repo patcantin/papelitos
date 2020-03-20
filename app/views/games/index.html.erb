@@ -8,17 +8,23 @@
   <div align="center">
       <!-- Create button -->
       <%= f.submit "Create a game", class: "buttons" %>
-  </div>  
+  </div>
   <% end %>
-   
+
   <div id="join-section" align="center">
+
   <!-- Join button -->
   <button class="buttons join-button" type="button">JOIN GAME</button>
     <div align="center" class="join-form hide-form">
       <%= form_tag game_users_path, method: :post do %>
         <%= number_field_tag :key_number, nil, max: 9999 %>
       <!-- Validate key + create user by join button -->
-        <div align="center"><%= submit_tag 'GO', class: "buttons" %></div>
+         <!-- Bottom right button  -->
+        <div id="bottom-right">
+          <%= submit_tag 'GO', class: "btn-bottom-right" %>
+            <div><%= image_tag "", class: "fas fa-angle-double-right" %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
