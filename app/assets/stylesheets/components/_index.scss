@@ -6,3 +6,20 @@
 @import "button-a";
 @import "footer";
 @import "logo";
+
+body{
+  background-color: #621055;
+}
+
+.index_logo{
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//----hide join button form before js onclick--//
+.hide-form{
+  visibility: hidden;
+}
+
