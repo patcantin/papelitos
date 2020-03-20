@@ -7,5 +7,4 @@ Rails.application.routes.draw do
     resources :game_teams, only: %i(update)
     resources :game_users, only: %i(index new create destroy)
   end
-  # resources :game_users, only: %i(create destroy)
 end
