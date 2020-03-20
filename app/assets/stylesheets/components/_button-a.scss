@@ -1,5 +1,5 @@
 .buttons {
-color: #FFA372 !important;
+color: $warm-orange !important;
 text-transform: uppercase;
 text-decoration: none;
 background: none;
@@ -8,18 +8,18 @@ margin: 30px 0 30px 0;
 display: inline-block;
 border-radius: 8px;
 border: solid 1px;
-border-color: #FFA372;
+border-color: $warm-orange;
 transition: all 0.4s ease 0s;
 width: 200px;
+letter-spacing: 2px;
+font-family: $headers-font;
+font-weight: bold;
 }
 
 .buttons:hover {
-background: #434343;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-transition: all 0.4s ease 0s;
+background: $warm-orange;
+color: $background-pink;
+letter-spacing: 2px;
 }
 
 
