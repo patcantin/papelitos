@@ -1,24 +1,25 @@
 .buttons {
-color: #fff !important;
+color: $warm-orange !important;
 text-transform: uppercase;
 text-decoration: none;
-background: black;
+background: none;
 padding: 10px;
 margin: 30px 0 30px 0;
-border-radius: 5px;
 display: inline-block;
-border: none;
+border-radius: 8px;
+border: solid 1px;
+border-color: $warm-orange;
 transition: all 0.4s ease 0s;
 width: 200px;
+letter-spacing: 2px;
+font-family: $headers-font;
+font-weight: bold;
 }
 
 .buttons:hover {
-background: #434343;
-letter-spacing: 1px;
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-transition: all 0.4s ease 0s;
+background: $warm-orange;
+color: $background-pink;
+letter-spacing: 2px;
 }
 
 

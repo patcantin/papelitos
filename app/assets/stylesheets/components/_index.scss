@@ -5,6 +5,7 @@
 @import "card-trip";
 @import "button-a";
 @import "footer";
+@import "logo";
 
 body{
   background-color: #621055;
@@ -17,6 +18,8 @@ body{
   margin-right: auto;
 }
 
+//----hide join button form before js onclick--//
 .hide-form{
   visibility: hidden;
 }
+
