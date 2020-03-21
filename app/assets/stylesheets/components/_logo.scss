@@ -1,6 +1,18 @@
+// big logo
 .index_logo{
   width: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+// small logo
+.small_logo{
+  width: 100px;
+  display: block;
+  position: fixed;
+  top: 15px;
+  left: 0;
+  padding: 5px;
+  margin-left: 10px;
 }
