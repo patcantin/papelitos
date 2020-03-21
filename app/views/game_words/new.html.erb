@@ -1,19 +1,23 @@
 <div id="game_key"><%= @game.key_number %></div>
 
-<%= form_tag "/games", method: "post" do %>
-  <input type="text" name="title" placeholder="Enter your word" />
-<% end %>
+<!-- Inputs for creating words -->
+<div class="input-words">
+  <%= form_tag "/games", method: "post" do %>
+    <input type="text" name="title" placeholder="Enter your word" />
+  <% end %>
 
-<%= form_tag "/games", method: "post" do %>
-  <input type="text" name="title" placeholder="Enter your word" />
-<% end %>
+  <%= form_tag "/games", method: "post" do %>
+    <input type="text" name="title" placeholder="Enter your word" />
+  <% end %>
 
-<%= form_tag "/games", method: "post" do %>
-  <input type="text" name="title" placeholder="Enter your word" />
-<% end %>
+  <%= form_tag "/games", method: "post" do %>
+    <input type="text" name="title" placeholder="Enter your word" />
+  <% end %>
 
-<%= form_tag "/games", method: "post" do %>
-  <input type="text" name="title" placeholder="Enter your word" />
-<% end %>
+  <%= form_tag "/games", method: "post" do %>
+    <input type="text" name="title" placeholder="Enter your word" />
+  <% end %>
+</div>
 
-<input type="submit" value="Submit" />  <!--  button submit -->
+<!--  button submit -->
+<input type="submit" value="Submit" />
