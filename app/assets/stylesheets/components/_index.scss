@@ -8,10 +8,19 @@
 @import "logo";
 @import "inputs";
 
+
 body{
-  background-color: #621055;
+  background-color: $background-pink;
+  font-family: $body-font;
+  color: $warm-orange;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  max-width: 770px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+// LOGO BIG SIZE
 .index_logo{
   width: 80%;
   display: block;

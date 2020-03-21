@@ -19,8 +19,7 @@ font-weight: bold;
 }
 
 .buttons:hover {
-background: $warm-orange;
-color: $background-pink;
+background: rgba(181, 43, 101,0.5);
 letter-spacing: 2px;
 }
 
@@ -40,6 +39,7 @@ letter-spacing: 2px;
  .btn-bottom-right{
     background: none;
     border: none;
+    color: $warm-orange;
   }
 
   .fa-angle-double-right{
