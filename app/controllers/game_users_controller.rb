@@ -11,6 +11,12 @@ class GameUsersController < ApplicationController
     @game = Game.find_by_key_number(params[:key_number])
     @game_user.game = @game
     @game_user.user = current_user
+    @game_users = @game.game_users
+    if @game_users.count.even?
+      @game_user.game_team = @game.game_teams.second
+    else
+      @game_user.game_team = @game.game_teams.first
+    end
     if @game_user.save
       redirect_to new_game_game_word_path(@game.id)
     else
