@@ -17,7 +17,7 @@ class GameWordsController < ApplicationController
 
   private
 
-  def set_game
+  def set_word
     @game = Game.find(params[:game_id])
   end
 
