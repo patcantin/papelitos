@@ -14,6 +14,9 @@ class GamesController < ApplicationController
         redirect_to new_game_game_word_path(@game.id)
       end
     end
+
+    def show
+    end
   end
 
   private
