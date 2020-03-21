@@ -1,27 +1,17 @@
-
 <div class="container">
   <!-- Game key to share -->
   <div id="game_key"><%= @game.key_number %></div>
-
-  <!-- Inputs for creating words -->
   <div>
+    <!-- Inputs for creating words -->
     <%= form_tag "/games", method: "post" do %>
-      <input class="input-word" type="text" name="title" placeholder="Enter your word" />
+      <input class="input-word" type="text" name="word_1" placeholder="Enter your word" />
+      <input class="input-word" type="text" name="word_2" placeholder="Enter your word" />
+      <input class="input-word" type="text" name="word_3" placeholder="Enter your word" />
+      <input class="input-word" type="text" name="word_4" placeholder="Enter your word" />
+      <input class="input-word" type="text" name="word_5" placeholder="Enter your word" />
+      <!--  button submit -->
+      <input type="submit" value="Submit" />  
     <% end %>
+  </div>  
+</div>   
 
-    <%= form_tag "/games", method: "post" do %>
-      <input class="input-word" type="text" name="title" placeholder="Enter your word" />
-    <% end %>
-
-    <%= form_tag "/games", method: "post" do %>
-      <input class="input-word" type="text" name="title" placeholder="Enter your word" />
-    <% end %>
-
-    <%= form_tag "/games", method: "post" do %>
-      <input class="input-word" type="text" name="title" placeholder="Enter your word" />
-    <% end %>
-  </div>
-</div>
-
-<!--  button submit -->
-<input type="submit" value="Submit" />

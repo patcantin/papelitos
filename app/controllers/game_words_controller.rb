@@ -4,9 +4,12 @@ class GameWordsController < ApplicationController
   end
 
   def create
-    @game_words = game_words.create title: params[:title]
-    if @game_word.save!
-      redirect_to update_game_game_teams_path(@game.id)
+    @game_word = GameWord.new(game_word_params)
+    @game = Game.find(params[:game_id])
+    @game_word.game = @game
+    @game_word.word = current_word
+    if @game_words.save!
+      redirect_to game_user_path(@game.id)
     else
       render :new
     end
@@ -19,6 +22,6 @@ class GameWordsController < ApplicationController
   end
 
   def game_word_params
-    params.permit(:game_id, :user_id)
+    params.permit(:name)
   end
 end
