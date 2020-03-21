@@ -1,9 +1,8 @@
 // INPUT for key number when join game
-
 #key_number{
   width: 143px;
   height: 63px;
-  margin-top: 10px;
+  margin: 30px;
   background-color: rgba(181, 43, 101,0.7);
   text-align: center;
   border: none;
@@ -13,4 +12,14 @@
   border-radius: 8px;
 }
 
+// // input for words
+
+//   margin: 30px;
+//   background-color: rgba(181, 43, 101,0.7);
+//   text-align: center;
+//   border: none;
+//   color: $warm-orange;
+//   font-weight: bold;
+//   font-size: 30px;
+//   border-radius: 8px;
 
