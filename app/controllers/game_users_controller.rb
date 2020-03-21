@@ -1,8 +1,9 @@
 class GameUsersController < ApplicationController
 
   def index
-    @game_users = GameUser.all
+    # @game_users = GameUser.all
     @game = Game.find(params[:game_id])
+    @game_users = @game.game_users
     @game_user = current_user.id
   end
   def create
