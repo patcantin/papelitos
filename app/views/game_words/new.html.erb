@@ -1,3 +1,6 @@
+<!-- SMALL PAPELITOS LOGO -->
+<%= image_tag "papelitos_logo.png", class: "small_logo" %>
+
 <div class="container">
   <!-- Game key to share -->
   <div id="game_key"><%= @game.key_number %></div>
@@ -9,12 +12,11 @@
       <input class="input-word" type="text" name="word_3" placeholder="Enter your word" />
       <input class="input-word" type="text" name="word_4" placeholder="Enter your word" />
       <input class="input-word" type="text" name="word_5" placeholder="Enter your word" />
-      <!--  button submit -->
-      <div class="bottom-right">
-        <input type="submit" value="Submit" class="btn-bottom-right" />
-        <i class="fas fa-angle-double-right"></i>
-      </div>
-
+  <!--  button submit -->
+  <div class="bottom-right">
+    <input type="submit" value="Submit" class="btn-bottom-right" />
+    <i class="fas fa-angle-double-right"></i>
+  </div>
     <% end %>
   </div>
 </div>
