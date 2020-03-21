@@ -1,9 +1,10 @@
 
 <div class="container">
+  <!-- Game key to share -->
   <div id="game_key"><%= @game.key_number %></div>
 
   <!-- Inputs for creating words -->
-  <div class="input-container">
+  <div>
     <%= form_tag "/games", method: "post" do %>
       <input class="input-word" type="text" name="title" placeholder="Enter your word" />
     <% end %>
@@ -21,7 +22,6 @@
     <% end %>
   </div>
 </div>
-
 
 <!--  button submit -->
 <input type="submit" value="Submit" />
