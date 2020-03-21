@@ -10,16 +10,36 @@
   font-weight: bold;
   font-size: 30px;
   border-radius: 8px;
+  letter-spacing: 3px;
 }
 
-// // input for words
+// INPUT for key number when display in game#words
+#game_key{
+  width: auto;
+  margin: 30px;
+  margin-top: 0;
+  text-align: center;
+  border: none;
+  color: $warm-orange;
+  font-size: 40px;
+  letter-spacing: 3px;
+}
 
-//   margin: 30px;
-//   background-color: rgba(181, 43, 101,0.7);
-//   text-align: center;
-//   border: none;
-//   color: $warm-orange;
-//   font-weight: bold;
-//   font-size: 30px;
-//   border-radius: 8px;
+.input-word{
+  width: auto;
+  background-color: rgba(181, 43, 101,0.7);
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  font-family: $body-font;
+  color: $warm-orange;
+  font-size: 20px;
+  border-radius: 8px;
+  }
+
+.input-word::placeholder{
+  color: $dark-pink;
+  font-size: 18px;
+}
+
 
