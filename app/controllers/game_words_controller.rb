@@ -4,24 +4,26 @@ class GameWordsController < ApplicationController
   end
 
   def create
-    @game_word = GameWord.new(game_word_params)
     @game = Game.find(params[:game_id])
-    @game_word.game = @game
-    @game_word.word = current_word
-    if @game_words.save!
-      redirect_to game_user_path(@game.id)
-    else
-      render :new
-    end
+    # use create instead of new to automatically save
+    # pass in game
+    GameWord.create(name: params[:word_1], game: @game)
+    GameWord.create(name: params[:word_2], game: @game)
+    GameWord.create(name: params[:word_3], game: @game)
+    GameWord.create(name: params[:word_4], game: @game)
+    GameWord.create(name: params[:word_5], game: @game)
+
+    redirect_to game_game_users_path(@game.id)
+    # if @game_words.save!
+    #   redirect_to game_game_users_path(@game.id)
+    # else
+    #   render :new
+    # end
   end
 
   private
 
   def set_words
     @game = Game.find(params[:game_id])
-  end
-
-  def game_word_params
-    params.permit(:name)
   end
 end
