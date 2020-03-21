@@ -20,6 +20,9 @@ class GamesController < ApplicationController
     else
       render :index
     end
+
+    def show
+    end
   end
 
   private
