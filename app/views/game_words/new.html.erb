@@ -3,7 +3,7 @@
   <div id="game_key"><%= @game.key_number %></div>
   <div>
     <!-- Inputs for creating words -->
-    <%= form_tag "/games", method: "post" do %>
+    <%= form_tag game_game_words_path(@game), method: "post" do %>
       <input class="input-word" type="text" name="word_1" placeholder="Enter your word" />
       <input class="input-word" type="text" name="word_2" placeholder="Enter your word" />
       <input class="input-word" type="text" name="word_3" placeholder="Enter your word" />
