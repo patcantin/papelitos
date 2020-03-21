@@ -1,6 +1,5 @@
 <div class="footer">
   <%= image_tag "", class: "fas fa-question fa-2x rules_icon" %>
   <%= image_tag "", class: "fas fa-cog fa-2x settings_icon" %>
-  <%= image_tag "", class: "fas fa-sign-out-alt" %>
+  <%= link_to "", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
 </div>
-
