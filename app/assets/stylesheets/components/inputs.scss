@@ -12,17 +12,35 @@
   border-radius: 8px;
 }
 
-// input for words
-.input-words{
-  margin: auto;
-  width: 100%;
-  height: auto;
-  background-color: rgba(181, 43, 101,0.7);
+// INPUT for key number when display in game#words
+#game_key{
+  width: auto;
+  margin: 30px;
   text-align: center;
   border: none;
   color: $warm-orange;
   font-weight: bold;
   font-size: 30px;
-  border-radius: 8px;
+}
+
+
+// input for words
+.input-container{
+  // margin: auto;
+  // width: 100px;
+  // height: auto;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-evenly;
+
+  .input-word{
+    // background-color: rgba(181, 43, 101,0.7);
+    // text-align: center;
+    // border: none;
+    // color: $warm-orange;
+    // font-weight: bold;
+    // font-size: 30px;
+    // border-radius: 8px;
+  }
 }
 

@@ -2,7 +2,6 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
-@import "card-trip";
 @import "button-a";
 @import "footer";
 @import "logo";
@@ -13,8 +12,9 @@ body{
   background-color: $background-pink;
   font-family: $body-font;
   color: $warm-orange;
-  padding-top: 10px;
-  padding-bottom: 40px;
+  // padding-top: 10px;
+  // padding-bottom: 40px;
+  padding: 20px;
   max-width: 770px;
 }
 
@@ -31,3 +31,10 @@ body{
   visibility: hidden;
 }
 
+// container
+.container{
+  padding: 10px 10px 20px;
+  text-align: center;
+  margin: 10px 10px 20px;
+  width: auto;
+}
