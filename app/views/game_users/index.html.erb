@@ -1,12 +1,38 @@
+
 <!-- SMALL PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
-<% @game_users.each do |u| %>
-   <p><%= u.user.name %></p>
+<table>
+  <tr>
+    <td style="width:30%;">
+        <h1>TEAM 1</h1>
+        <hr>
+    </td>
+    <td style="width:30%;">
+        <h1>TEAM 2</h1>
+        <hr>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:30%;">
+    <% @game_users.each do |u| %>
+      <% if u.game_team == @game.game_teams.first %>
+        <h1><%= u.user.name %>t1</h1>
+      <% end %>
+    <% end %>
+    </td>
+    <td style="width:30%;">
+      <% @game_users.each do |u| %>
+<% if u.game_team == @game.game_teams.second %>
+  <h1><%= u.user.name %>t2</h1>
+ <% end %>
 <% end %>
+    </td>
+  </tr>
+</table>
+
+
 
    <% if @game_user == 1 %>
       <%= link_to "START", game_path(@game.id), class: 'buttons' %>
   <% end %>
-
-
