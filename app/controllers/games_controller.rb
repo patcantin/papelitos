@@ -6,19 +6,13 @@ class GamesController < ApplicationController
     @game_user = GameUser.new
   end
   def create
-    @game = Game.new
-    @game.user = current_user
-    if @game.save!
-      @game_user = GameUser.new(game_user_params)
-      @game_user.game = @game
-      @game_user.user = current_user
-      if @game_user.save!
+    @game = Game.new(user: current_user)
+    if @game.save
+      game_user = GameUser.new(user: current_user, game: @game) # assign current user to game
+      if game_user.save
+        2.times { GameTeam.create!(game: @game) } # create 2 teams associated to this game
         redirect_to new_game_game_word_path(@game.id)
-      else
-        render :index
       end
-    else
-      render :index
     end
   end
 
@@ -27,8 +21,14 @@ class GamesController < ApplicationController
   def set_game
     @game = Game.find(params[:game_id])
   end
-
-  def game_user_params
-    params.permit(:game_id, :user_id)
-  end
 end
+
+
+
+
+
+
+
+
+
+
