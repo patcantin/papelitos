@@ -1,2 +1,49 @@
 <!-- SMALL PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+
+<!-- Round#1 -->
+<% if @game.round_name == "description "%>
+  <h1>Round #1</h1>
+  <h2>Describe</h2>
+  <p></p>
+  <!-- START BUTTON -->
+  <button class="buttons join-button" type="button">START</button>
+
+<!-- Round#2 -->
+<% elsif @game.round_name == "mime" %>
+  <h1>Round #2</h1>
+  <h2>Mime</h2>
+  <p></p>
+  <!-- START BUTTON -->
+  <button class="buttons join-button" type="button">START</button>
+
+<!-- Round#3 -->
+<% elsif @game.round_name == "one_word" %>
+  <h1>Round #3</h1>
+  <h2>One word</h2>
+  <p></p>
+  <!-- START BUTTON -->
+  <button class="buttons join-button" type="button">START</button>
+<% end %>
+
+
+
+
+<!-- if @game.game_words.where(status.true).count == 0 -->
+<!-- if current_user -->
+<!-- if not current_user -->
+<!-- if games.round > 3 -->
+
+<!-- @game
+@game.game-words
+@game.game-word.where(status:false)
+.where(status:true).count == 0
+"".sample
+-> def papelitos? end
+
+Game-user = status (boolean)
+-> meme principe que @game et connecter a @game pour permettre joueur de finir le round
+
+DB
+-> game-words (status -> boolean)
+-> games (started(bool), finished(bool), round(enum)) -->
