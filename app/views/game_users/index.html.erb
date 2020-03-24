@@ -2,37 +2,42 @@
 <!-- SMALL PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
+<!-- Table of users that submited their words -->
 <table>
-  <tr>
-    <td style="width:30%;">
-        <h1>TEAM 1</h1>
-        <hr>
-    </td>
-    <td style="width:30%;">
-        <h1>TEAM 2</h1>
-        <hr>
-    </td>
-  </tr>
-  <tr>
-    <td style="width:30%;">
-    <% @game_users.each do |u| %>
-      <% if u.game_team == @game.game_teams.first %>
-        <h1><%= u.user.name %></h1>
-      <% end %>
-    <% end %>
-    </td>
-    <td style="width:30%;">
-      <% @game_users.each do |u| %>
-<% if u.game_team == @game.game_teams.second %>
-  <h1><%= u.user.name %></h1>
- <% end %>
-<% end %>
-    </td>
-  </tr>
+  <!-- headers of the table -->
+  <thead>
+    <tr>
+      <td>Team 1</td>
+      <td>Team 2</td>
+    </tr>
+  </thead>
+  <!-- body of the table...where the users will be shown -->
+  <tbody>
+    <!-- first column (for team 1)-->
+    <tr>
+      <td >
+        <% @game_users.each do |u| %>
+          <% if u.game_team == @game.game_teams.first %>
+            <p><%= u.user.name %></p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+    <!-- column 2 (for team 2) -->
+    <tr>
+      <td>
+        <% @game_users.each do |u| %>
+          <% if u.game_team == @game.game_teams.second %>
+            <p><%= u.user.name %></p>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
 </table>
+<!-- End of table users -->
 
-
-
-   <% if @game_user == 1 %>
-      <%= link_to "START", game_path(@game.id), class: 'buttons' %>
-  <% end %>
+<!-- START BUTTON -->
+<% if @game_user == 1 %>
+  <%= link_to "START", game_path(@game.id), class: 'buttons' %>
+<% end %>
