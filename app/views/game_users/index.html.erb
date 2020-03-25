@@ -2,40 +2,29 @@
 <!-- SMALL PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
-<!-- Table of users that submited their words -->
-<table>
-  <!-- headers of the table -->
-  <thead>
-    <tr>
-      <td>Team 1</td>
-      <td>Team 2</td>
-    </tr>
-  </thead>
-  <!-- body of the table...where the users will be shown -->
-  <tbody>
-    <!-- first column (for team 1)-->
-    <tr>
-      <td >
-        <% @game_users.each do |u| %>
-          <% if u.game_team == @game.game_teams.first %>
-            <p><%= u.user.name %></p>
-          <% end %>
+<div class="d-flex">
+  <div> <!-- card for team 1 -->
+    <div>
+      <h1>Team 1</h1>
+      <img src="" alt="">
+    </div>
+    <!-- loop over users of team 1 -->
+    <% @game_users.each do |u| %>
+      <% if u.game_team == @game.game_teams.first %>
+          <li><%= u.user.name %></li>
         <% end %>
-      </td>
-    </tr>
-    <!-- column 2 (for team 2) -->
-    <tr>
-      <td>
-        <% @game_users.each do |u| %>
-          <% if u.game_team == @game.game_teams.second %>
-            <p><%= u.user.name %></p>
-          <% end %>
-        <% end %>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<!-- End of table users -->
+      <% end %>
+  </div>
+  <div> <!-- card for team 2 -->
+    <!-- loop over users of team 2 -->
+    <% @game_users.each do |u| %>
+      <% if u.game_team == @game.game_teams.second %>
+        <li><%= u.user.name %></li>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
 
 <!-- START BUTTON -->
 <% if @game_user == 1 %>
