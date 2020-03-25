@@ -15,6 +15,10 @@ class GamesController < ApplicationController
       end
     end
   end
+  def show
+    @game = Game.find(params[:id])
+    @game_words = GameWord.all
+  end
 end
 
 
