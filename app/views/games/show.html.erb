@@ -30,12 +30,11 @@
 <% end %>
 
 <div class="playing hide_playing">
-  <% @game.game_words.each do |w| %>
-      <%= w.name %>
-  <% end %>
-  <h1>timer</h1>
-</div>
+  <%= @game.game_words.first.name %>
+  <%= @game.game_users.first.user.name %>
+  <h1><span id="countdowntimer">10 </span></h1>
 
+    <button class="buttons join-button" type="button">START</button>
 
 
 
