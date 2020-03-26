@@ -27,18 +27,32 @@
 <% end %>
 
 <% if @game.game_users.first.user_id == current_user.id %>
-    <button class="buttons join-button show_game" type="button" id="js-startTimer">START</button>
+  <button class="buttons join-button show_game" type="button" id="js-startTimer">START</button>
+<% else %>
+  <h3><%= @game.game_users.first.user.name %> is playing</h3> <br>
+  <table>
+    <tbody>
+      <td>Team 1</td>
+      <td>Team 2</td>
+    </tbody>
+    <tr>
+      <% @game.game_teams.each do |t|%>
+        <td><%= t.score %></td>
+      <% end %>
+    </tr>
+  </table>
+  <h1><span class="js-timeout">60</span></h1>
+  <%= audio_tag "buzzer.wav", class: "audio-play" %>
+  <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
+  <audio id="rock-on" src="buzzer.wav"></audio>
 <% end %>
 
 <div class="playing hide_playing">
-  <h3><%= @game.game_users.first.user.name %></h3> <br>
   <% if @game.game_users.first.user_id == current_user.id %>
+    <h3>Your turn <%= @game.game_users.first.user.name %></h3> <br>
     <h1><%= @game.game_words.first.name %></h1>
     <button class="buttons join-button" type="button">Skip -1</button>
     <button class="buttons join-button" type="button">Got it! +1</button>
-  <% else %>
-    <h2>score</h2>
-    <button class="buttons join-button" type="button" id="buzz_sound">Buzzer</button>
   <% end  %>
   <h1><span class="js-timeout">60</span></h1>
 </div>

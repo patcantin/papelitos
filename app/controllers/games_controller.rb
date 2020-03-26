@@ -8,7 +8,7 @@ class GamesController < ApplicationController
     @game = Game.new(user: current_user)
     if @game.save
       @game_user = GameUser.new(user: current_user, game: @game) # assign current user to game
-      2.times { GameTeam.create!(game: @game) } # create 2 teams associated to this game
+      2.times { GameTeam.create!(game: @game, score: 0) } # create 2 teams associated to this game
       @game_user.game_team = @game.game_teams.first
       if @game_user.save
         redirect_to new_game_game_word_path(@game.id)
@@ -19,6 +19,13 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @game_users = GameUser.all
     @game_words = GameWord.all
+    @game_teams = GameTeam.all
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    # @bus.update(name: params[:bus][:name], capacity: params[:bus][:capacity], description: params[:bus][:description], price: params[:bus][:price], photo: params[:bus][:photo])
+    # redirect_to dashboard_path
   end
 end
 
