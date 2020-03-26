@@ -6,17 +6,15 @@
 <% if @game.round == "describe"%>
   <h1>Round #1</h1>
   <h2>Describe</h2>
-  <p></p>
+  <p>Current_user: <%= current_user.id %></p>
+  <p>Player id: <%= @game.game_users.first.user_id %></p>
   <!-- START BUTTON -->
-  <button class="buttons join-button show_game" type="button" id="js-startTimer">START</button>
-
 <!-- Round#2 -->
 <% elsif @game.round == "mime" %>
   <h1>Round #2</h1>
   <h2>Mime</h2>
   <p></p>
   <!-- START BUTTON -->
-  <button class="buttons join-button" type="button" >START</button>
 
 <!-- Round#3 -->
 <% elsif @game.round == "one_word" %>
@@ -24,16 +22,25 @@
   <h2>One word</h2>
   <p></p>
   <!-- START BUTTON -->
-  <button class="buttons join-button" type="button" id="js-startTimer">START</button>
 <% else %>
   <p>WTF</p>
 <% end %>
 
-<div class="playing hide_playing">
-  <%= @game.game_words.first.name %>
-  <%= @game.game_users.first.user.name %>
-<h1><span class="js-timeout">60</span></h1>
+<% if @game.game_users.first.user_id == current_user.id %>
+    <button class="buttons join-button show_game" type="button" id="js-startTimer">START</button>
+<% end %>
 
+<div class="playing hide_playing">
+  <h3><%= @game.game_users.first.user.name %></h3> <br>
+  <% if @game.game_users.first.user_id == current_user.id %>
+    <h1><%= @game.game_words.first.name %></h1>
+    <button class="buttons join-button" type="button">Skip -1</button>
+    <button class="buttons join-button" type="button">Got it! +1</button>
+  <% else %>
+    <h2>score</h2>
+    <button class="buttons join-button" type="button" id="buzz_sound">Buzzer</button>
+  <% end  %>
+  <h1><span class="js-timeout">60</span></h1>
 </div>
 
 
