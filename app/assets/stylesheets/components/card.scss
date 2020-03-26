@@ -1,7 +1,7 @@
- .d-flex {
-    margin-top: 10px;
-    width: 100%;
- }
+ // .d-flex {
+ //    margin-top: 10px;
+ //    width: 100%;
+ // }
 
   .card-header h1{
     font-size: 1.5rem;
@@ -18,5 +18,9 @@
   height: 100px;
   padding: 20px;
   margin: 5px;
+  width: 100%;
   }
 
+.card-team-player {
+  width: 46%;
+}
