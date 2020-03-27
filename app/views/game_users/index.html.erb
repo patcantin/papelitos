@@ -1,12 +1,12 @@
 
 <!-- SMALL PAPELITOS LOGO -->
-<%= image_tag "papelitos_logo.png", class: "small_logo" %>
+<%#= image_tag "papelitos_logo.png", class: "small_logo" %>
 
 <div class="d-flex justify-content-between">
   <div class="card-team-player"> <!-- card for team 1 -->
     <div class="card-header">
-      <h1>Team 1</h1>
-      <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+      <%= image_tag "conejo.png", class: "team-pic" %>
+      <h1 class="team-name">Team 1</h1>
     </div>
     <!-- loop over users of team 1 -->
     <div class="card-team">
@@ -19,8 +19,8 @@
   </div>
   <div class="card-team-player"> <!-- card for team 2 -->
     <div class="card-header">
-      <h1>Team 2</h1>
-      <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+      <%= image_tag "perro.png", class: "team-pic" %>
+      <h1 class="team-name">Team 2</h1>
     </div>
     <!-- loop over users of team 2 -->
     <div class="card-team">
@@ -34,7 +34,10 @@
 </div>
 
 
-<!-- START BUTTON -->
+<!-- READY BUTTON -->
 <% if @game_user == 1 %>
-  <%= link_to "START", game_path(@game.id), class: 'buttons' %>
+  <div class="bottom-right">
+    <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
+    <%= image_tag "", class: "fas fa-angle-double-right" %>
+  </div>
 <% end %>

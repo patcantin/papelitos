@@ -13,9 +13,9 @@ body{
   background-color: $background-pink;
   font-family: $headers-font;
   color: $warm-orange;
-  padding: 20px;
-  max-width: 770px;
-  margin: 0 auto;
+  // padding: 20px;
+  // max-width: 770px;
+  // margin: 0 auto;
 }
 
 
@@ -30,4 +30,9 @@ body{
   text-align: center;
   margin: 10px 10px 20px;
   width: auto;
+}
+
+.body-container{
+  width: 90%;
+  margin: auto;
 }
