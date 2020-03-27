@@ -1,6 +1,14 @@
 <!-- SMALL PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
+<span id="game-id" data-game-id="<%= @game.id %>"></span>
+<p>Current Word: <span id="current-word"></span></p>
+<p>Your team is playing: <span id="your-team-is-playing"></span></p>
+<p>You are playing: <span id="you-are-playing"></span></p>
+<p>Who is playing: <span id="who-is-playing"></span></p>
+<p>Seconds left: <span id="seconds-left"></span></p>
+<p>Round name: <span id="round-name"></span></p>
+
 <!-- Round#1 -->
 
 <% if @game.round == "describe"%>
@@ -21,9 +29,8 @@
       <td>Team 2</td>
     </tbody>
     <tr>
-      <% @game.game_teams.each do |t|%>
-        <td><%= t.score %></td>
-      <% end %>
+      <td id="team-1-points"></td>
+      <td id="team-2-points"></td>
     </tr>
   </table>
   <h1><span class="js-timeout">60</span></h1>
