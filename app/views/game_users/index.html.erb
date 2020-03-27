@@ -1,38 +1,42 @@
 
 <!-- SMALL PAPELITOS LOGO -->
-<%= image_tag "papelitos_logo.png", class: "small_logo" %>
+<%#= image_tag "papelitos_logo.png", class: "small_logo" %>
 
-<table>
-  <tr>
-    <td style="width:30%;">
-        <h1>TEAM 1</h1>
-        <hr>
-    </td>
-    <td style="width:30%;">
-        <h1>TEAM 2</h1>
-        <hr>
-    </td>
-  </tr>
-  <tr>
-    <td style="width:30%;">
+<div class="d-flex justify-content-between">
+  <div class="card-team-player"> <!-- card for team 1 -->
+    <div class="card-header">
+      <%= image_tag "conejo.png", class: "team-pic" %>
+      <h1 class="team-name">Team 1</h1>
+    </div>
+    <!-- loop over users of team 1 -->
+    <div class="card-team">
+      <% @game_users.each do |u| %>
+        <% if u.game_team == @game.game_teams.first %>
+          <li><%= u.user.name %></li>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="card-team-player"> <!-- card for team 2 -->
+    <div class="card-header">
+      <%= image_tag "perro.png", class: "team-pic" %>
+      <h1 class="team-name">Team 2</h1>
+    </div>
+    <!-- loop over users of team 2 -->
+    <div class="card-team">
     <% @game_users.each do |u| %>
-      <% if u.game_team == @game.game_teams.first %>
-        <h1><%= u.user.name %></h1>
+      <% if u.game_team == @game.game_teams.second %>
+        <li><%= u.user.name %></li>
       <% end %>
     <% end %>
-    </td>
-    <td style="width:30%;">
-      <% @game_users.each do |u| %>
-<% if u.game_team == @game.game_teams.second %>
-  <h1><%= u.user.name %></h1>
- <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- READY BUTTON -->
+<% if @game_user == 1 %>
+  <div class="bottom-right">
+    <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
+    <%= image_tag "", class: "fas fa-angle-double-right" %>
+  </div>
 <% end %>
-    </td>
-  </tr>
-</table>
-
-
-
-  <% if @game_user == 1 %>
-      <%= link_to "START", game_path(@game.id), class: 'buttons' %>
-  <% end %>
