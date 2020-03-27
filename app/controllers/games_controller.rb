@@ -22,11 +22,6 @@ class GamesController < ApplicationController
     @game_teams = GameTeam.all
   end
 
-  def update
-    @game = Game.find(params[:id])
-    # @bus.update(name: params[:bus][:name], capacity: params[:bus][:capacity], description: params[:bus][:description], price: params[:bus][:price], photo: params[:bus][:photo])
-    # redirect_to dashboard_path
-  end
 end
 
 
