@@ -27,6 +27,9 @@ class GamesController < ApplicationController
     # @bus.update(name: params[:bus][:name], capacity: params[:bus][:capacity], description: params[:bus][:description], price: params[:bus][:price], photo: params[:bus][:photo])
     # redirect_to dashboard_path
   end
+  def show_menu?
+    false
+  end
 end
 
 
