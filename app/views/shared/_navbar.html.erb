@@ -1,5 +1,10 @@
 <div class="navbar">
+
 <% if current_user %>
+  <!-- Logo -->
+  <% unless controller_name == "games" && action_name == "index"%>
+    <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+  <% end %>
   <!-- avatar -->
   <% if current_user.photo.attached? %>
     <%= cl_image_tag current_user.photo.key, class: "user-avatar" %>
@@ -9,8 +14,3 @@
   <% end %>
 <% end %>
 </div>
-
-
-
-
-

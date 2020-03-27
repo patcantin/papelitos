@@ -2,30 +2,49 @@
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
 <!-- Round#1 -->
-<% if @game.round_name == "description "%>
+
+<% if @game.round == "describe"%>
   <h1>Round #1</h1>
   <h2>Describe</h2>
-  <p></p>
+  <p>Current_user: <%= current_user.id %></p>
+  <p>Player id: <%= @game.game_users.first.user_id %></p>
   <!-- START BUTTON -->
-  <button class="buttons join-button" type="button">START</button>
-
-<!-- Round#2 -->
-<% elsif @game.round_name == "mime" %>
-  <h1>Round #2</h1>
-  <h2>Mime</h2>
-  <p></p>
-  <!-- START BUTTON -->
-  <button class="buttons join-button" type="button">START</button>
-
-<!-- Round#3 -->
-<% elsif @game.round_name == "one_word" %>
-  <h1>Round #3</h1>
-  <h2>One word</h2>
-  <p></p>
-  <!-- START BUTTON -->
-  <button class="buttons join-button" type="button">START</button>
 <% end %>
 
+<% if @game.game_users.first.user_id == current_user.id %>
+  <button class="buttons join-button show_game" type="button" id="js-startTimer">START</button>
+<% else %>
+  <h3><%= @game.game_users.first.user.name %> is playing</h3> <br>
+  <table>
+    <tbody>
+      <td>Team 1</td>
+      <td>Team 2</td>
+    </tbody>
+    <tr>
+      <% @game.game_teams.each do |t|%>
+        <td><%= t.score %></td>
+      <% end %>
+    </tr>
+  </table>
+  <h1><span class="js-timeout">60</span></h1>
+  <%= audio_tag "buzzer.wav", class: "audio-play" %>
+  <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
+  <audio id="rock-on" src="buzzer.wav"></audio>
+<% end %>
+
+<div class="playing hide_playing">
+  <% if @game.game_users.first.user_id == current_user.id %>
+    <h3>Your turn <%= @game.game_users.first.user.name %></h3> <br>
+    <h1><%= @game.game_words.first.name %></h1>
+      <%= simple_form_for @game.game_users.first.game_team do |f| %>
+      <!-- score +1 button -->
+      <%= f.submit "Got it! +1", class: "buttons join-button" %>
+    <% end %>
+    <!-- <button class="buttons join-button" type="button">Skip -1</button>
+    <button class="buttons join-button" type="button">Got it! +1</button> -->
+  <% end  %>
+  <h1><span class="js-timeout">60</span></h1>
+</div>
 
 
 
