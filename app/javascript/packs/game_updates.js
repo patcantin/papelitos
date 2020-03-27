@@ -26,7 +26,7 @@ setInterval(() => {
       secondsLeft.innerHTML = data.seconds_left;
       teamOnePoints.innerHTML = data.team_1_points;
       teamTwoPoints.innerHTML = data.team_2_points;
-      roundName.innerHTML = data.round_name;
+      roundName.innerHTML = data.round_now;
       whoIsPlaying.innerHTML = data.who_is_playing;
     });
 }, 1000);

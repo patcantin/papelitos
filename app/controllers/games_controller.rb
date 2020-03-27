@@ -31,16 +31,20 @@ class GamesController < ApplicationController
         current_word  = @game.game_words.find_by(status: :in)
         team_1_score = @game.game_teams.first.score
         team_2_score = @game.game_teams.last.score
+        round_now = @game.round
+        who_play = @game.game_users.first.user.name
+        playing_now = @game.game_users.first.user.name
+        team_playing = @game.game_users.first.game_team.id
 
         render json: {
           current_word: current_word.name,
-          your_team_is_playing: "",
-          who_is_playing: "...",
-          you_are_playing: "",
+          your_team_is_playing: team_playing,
+          who_is_playing: who_play,
+          you_are_playing: playing_now,
           seconds_left: "",
           team_1_points: team_1_score,
           team_2_points: team_2_score,
-          round_name: @game.round
+          round_now: round_now
         }
       end
     end

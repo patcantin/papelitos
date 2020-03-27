@@ -17,14 +17,14 @@
     <td style="width:30%;">
     <% @game_users.each do |u| %>
       <% if u.game_team == @game.game_teams.first %>
-        <h1><%= u.user.name %></h1>
+        <h1><span id="team-1-players"></span></h1>
       <% end %>
     <% end %>
     </td>
     <td style="width:30%;">
       <% @game_users.each do |u| %>
 <% if u.game_team == @game.game_teams.second %>
-  <h1><%= u.user.name %></h1>
+  <h1><span id="team-2-players"></span></h1>
  <% end %>
 <% end %>
     </td>
@@ -32,7 +32,5 @@
 </table>
 
 
-
-  <% if @game_user == 1 %>
       <%= link_to "START", game_path(@game.id), class: 'buttons' %>
-  <% end %>
+

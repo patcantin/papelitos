@@ -1,9 +1,22 @@
 class GameUsersController < ApplicationController
   def index
-    # @game_users = GameUser.all
-    @game = Game.find(params[:game_id])
-    @game_users = @game.game_users
-    @game_user = current_user.id
+   @game = Game.find(params[:game_id])
+      respond_to do |format|
+        # if the browser requested HTML then render HTML response -> app/views/game_users/index.html.erb
+        format.html do
+          @game_users = GameUser.all
+        end
+        # if the browser requested JSON then send back JSON
+        format.json do
+          team_1_players =  u.user.name
+          team_2_players =  u.user.name
+
+          render json: {
+            team_1_players: team_1_players,
+            team_2_players: team_2_players
+          }
+      end
+    end
   end
 
   def create
@@ -24,3 +37,4 @@ class GameUsersController < ApplicationController
     end
   end
 end
+

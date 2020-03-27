@@ -2,57 +2,34 @@
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
 <span id="game-id" data-game-id="<%= @game.id %>"></span>
-<p>Current Word: <span id="current-word"></span></p>
+
+
+
+
+
+<p>Round: <span id="round-now"></span></p>
 <p>Your team is playing: <span id="your-team-is-playing"></span></p>
-<p>You are playing: <span id="you-are-playing"></span></p>
-<p>Who is playing: <span id="who-is-playing"></span></p>
-<p>Seconds left: <span id="seconds-left"></span></p>
-<p>Round name: <span id="round-name"></span></p>
 
-<!-- Round#1 -->
 
-<% if @game.round == "describe"%>
-  <h1>Round #1</h1>
-  <h2>Describe</h2>
-  <p>Current_user: <%= current_user.id %></p>
-  <p>Player id: <%= @game.game_users.first.user_id %></p>
-  <!-- START BUTTON -->
-<% end %>
 
 <% if @game.game_users.first.user_id == current_user.id %>
-  <button class="buttons join-button show_game" type="button" id="js-startTimer">START</button>
+  <p>Current Word: <span id="current-word"></span></p>
+  <p>You are playing <span id="you-are-playing"></span></p>
+  <%= simple_form_for @game.game_users.first.game_team do |f| %>
+    <!-- score +1 button -->
+    <%= f.submit "Got it! +1", class: "buttons join-button" %>
+  <% end %>
 <% else %>
-  <h3><%= @game.game_users.first.user.name %> is playing</h3> <br>
-  <table>
-    <tbody>
-      <td>Team 1</td>
-      <td>Team 2</td>
-    </tbody>
-    <tr>
-      <td id="team-1-points"></td>
-      <td id="team-2-points"></td>
-    </tr>
-  </table>
+
+  <p><span id="you-are-playing"> is playing</span></p>
+  <p>Seconds left: <span id="seconds-left"></span></p>
   <h1><span class="js-timeout">60</span></h1>
+  <p>Score team 1<span id="team-1-points"></span></p>
+  <p>Score team 2<span id="team-2-points"></span></p>
   <%= audio_tag "buzzer.wav", class: "audio-play" %>
   <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
   <audio id="rock-on" src="buzzer.wav"></audio>
 <% end %>
-
-<div class="playing hide_playing">
-  <% if @game.game_users.first.user_id == current_user.id %>
-    <h3>Your turn <%= @game.game_users.first.user.name %></h3> <br>
-    <h1><%= @game.game_words.first.name %></h1>
-      <%= simple_form_for @game.game_users.first.game_team do |f| %>
-      <!-- score +1 button -->
-      <%= f.submit "Got it! +1", class: "buttons join-button" %>
-    <% end %>
-    <!-- <button class="buttons join-button" type="button">Skip -1</button>
-    <button class="buttons join-button" type="button">Got it! +1</button> -->
-  <% end  %>
-  <h1><span class="js-timeout">60</span></h1>
-</div>
-
 
 
 <!-- if @game.game_words.where(status.true).count == 0 -->
