@@ -1,17 +1,11 @@
-<!-- SMALL PAPELITOS LOGO -->
-<%= image_tag "papelitos_logo.png", class: "small_logo" %>
 
 <span id="game-id" data-game-id="<%= @game.id %>"></span>
 
-
-
-
-
+<!-- Span tags render json.html format game info -->
 <p>Round: <span id="round-name"></span></p>
 <p>Your team is playing: <span id="your-team-is-playing"></span></p>
 
-
-
+<!-- content shows if current user play -->
 <% if @game.game_users.first.user_id == current_user.id %>
   <p>Current Word: <span id="current-word"></span></p>
   <p>You are playing <span id="you-are-playing"></span></p>
@@ -20,20 +14,27 @@
     <%= f.submit "Got it! +1", class: "buttons join-button" %>
   <% end %>
 <% else %>
-
+<!-- what every other players sees -->
   <p><span id="who-is-playing"></span> is playing</p>
+  <!-- TIMER -->
   <p>Seconds left: <span id="seconds-left">---</span></p>
   <!-- <h1><span class="js-timeout">60</span></h1> -->
+
+  <!-- sCORES for each team -->
   <p>Score team 1<span id="team-1-points"></span></p>
   <p>Score team 2<span id="team-2-points"></span></p>
+
+  <!-- BUZZER -->
   <%= audio_tag "buzzer.wav", class: "audio-play" %>
   <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
   <audio id="rock-on" src="buzzer.wav"></audio>
 <% end %>
 
+<!-- jAVASCRIPT PACK TAGS -->
 <%= javascript_pack_tag 'game_updates' %>
 <%= javascript_pack_tag 'clock' %>
 <%= javascript_pack_tag 'noizes' %>
+
 <!-- if @game.game_words.where(status.true).count == 0 -->
 <!-- if current_user -->
 <!-- if not current_user -->

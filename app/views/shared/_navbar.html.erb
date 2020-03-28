@@ -8,9 +8,9 @@
   <!-- avatar -->
   <% if current_user.photo.attached? %>
   <div class= "avatar-name">
-    <%= cl_image_tag current_user.photo.key, class: "user-avatar" %>
     <!-- username -->
     <span class="user-name"><%= current_user.name %></span>
+    <%= cl_image_tag current_user.photo.key, class: "user-avatar" %>
   </div>
     <% else %>
     <div>

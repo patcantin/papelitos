@@ -1,6 +1,7 @@
 
+<!-- To create json into our controllers. Associates every game-user in this page to the game id -->
 <span id="game-id" data-game-id="<%= @game.id %>"></span>
-
+<!-- game_user index allow to make a real time refresh -->
 <%= javascript_pack_tag 'game_users_updates' %>
 
 <!-- CARDS countainer -->
