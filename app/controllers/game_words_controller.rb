@@ -5,6 +5,12 @@ class GameWordsController < ApplicationController
 
   def create
     @game = Game.find(params[:game_id])
+
+    if params[:word_1].empty? || params[:word_2].empty? || params[:word_3].empty? || params[:word_4].empty? || params[:word_5].empty?
+
+    redirect_to new_game_game_word_path(@game), alert: 'All fields must contains a word'
+
+    else
     # use create instead of new to automatically save
     # pass in game
     GameWord.create(name: params[:word_1], game: @game)
@@ -19,6 +25,7 @@ class GameWordsController < ApplicationController
     # else
     #   render :new
     # end
+    end
   end
 
   private

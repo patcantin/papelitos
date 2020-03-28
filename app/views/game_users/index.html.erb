@@ -29,10 +29,8 @@
 </div>
 
 <!-- READY BUTTON -->
-<% if @game.game_users.first.user_id == current_user.id %>
   <div class="bottom-right">
     <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
     <%= image_tag "", class: "fas fa-angle-double-right" %>
   </div>
-<% end %>
 <%= javascript_pack_tag 'game_users_updates' %>
