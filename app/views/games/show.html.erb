@@ -21,9 +21,9 @@
   <% end %>
 <% else %>
 
-  <p><span id="who-is-playing"> is playing</span></p>
-  <p>Seconds left: <span id="seconds-left"></span></p>
-  <h1><span class="js-timeout">60</span></h1>
+  <p><span id="who-is-playing"></span> is playing</p>
+  <p>Seconds left: <span id="seconds-left">---</span></p>
+  <!-- <h1><span class="js-timeout">60</span></h1> -->
   <p>Score team 1<span id="team-1-points"></span></p>
   <p>Score team 2<span id="team-2-points"></span></p>
   <%= audio_tag "buzzer.wav", class: "audio-play" %>
@@ -31,7 +31,9 @@
   <audio id="rock-on" src="buzzer.wav"></audio>
 <% end %>
 
-
+<%= javascript_pack_tag 'game_updates' %>
+<%= javascript_pack_tag 'clock' %>
+<%= javascript_pack_tag 'noizes' %>
 <!-- if @game.game_words.where(status.true).count == 0 -->
 <!-- if current_user -->
 <!-- if not current_user -->

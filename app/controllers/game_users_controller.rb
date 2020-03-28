@@ -9,9 +9,11 @@ class GameUsersController < ApplicationController
         end
         # if the browser requested JSON then send back JSON
         format.json do
-        team_players = u.user.name
+        team_1_players = @game.game_teams.first.users.pluck(:name)
+        team_2_players = @game.game_teams.second.users.pluck(:name)
         render json: {
-          team_players: team_players
+          team_1_players: team_1_players,
+          team_2_players: team_2_players
         }
         end
       end

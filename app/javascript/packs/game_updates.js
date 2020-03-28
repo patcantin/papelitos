@@ -20,14 +20,14 @@ setInterval(() => {
     .then(response => response.json())
     .then((data) => {
       // console.log(data);
-      currentWord.innerHTML = data.current_word;
-      yourTeamIsPlaying.innerHTML = data.your_team_is_playing;
-      youArePlaying.innerHTML = data.you_are_playing;
-      secondsLeft.innerHTML = data.seconds_left;
-      teamOnePoints.innerHTML = data.team_1_points;
-      teamTwoPoints.innerHTML = data.team_2_points;
-      roundName.innerHTML = data.round_name;
-      whoIsPlaying.innerHTML = data.who_is_playing;
+      if (currentWord) currentWord.innerHTML = data.current_word;
+      if (yourTeamIsPlaying) yourTeamIsPlaying.innerHTML = data.your_team_is_playing;
+      if (youArePlaying) youArePlaying.innerHTML = data.you_are_playing;
+      if (secondsLeft) secondsLeft.innerHTML = data.seconds_left;
+      if (teamOnePoints) teamOnePoints.innerHTML = data.team_1_points;
+      if (teamTwoPoints) teamTwoPoints.innerHTML = data.team_2_points;
+      if (roundName) roundName.innerHTML = data.round_name;
+      if (whoIsPlaying) whoIsPlaying.innerHTML = data.who_is_playing;
     });
 }, 1000);
 

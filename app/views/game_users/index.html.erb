@@ -1,6 +1,7 @@
 
 <!-- SMALL PAPELITOS LOGO -->
 <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+<span id="game-id" data-game-id="<%= @game.id %>"></span>
 
 <table>
   <tr>
@@ -15,18 +16,10 @@
   </tr>
   <tr>
     <td style="width:30%;">
-    <% @game_users.each do |u| %>
-      <% if u.game_team == @game.game_teams.first %>
-        <h1><span id="team-players"></span></h1>
-      <% end %>
-    <% end %>
+      <h1><ul id="team-1-players"></ul></h1>
     </td>
     <td style="width:30%;">
-      <% @game_users.each do |u| %>
-<% if u.game_team == @game.game_teams.second %>
-  <h1><span id="team-players"></span></h1>
- <% end %>
-<% end %>
+      <h1><ul id="team-2-players"></ul></h1>
     </td>
   </tr>
 </table>
@@ -34,3 +27,4 @@
 
       <%= link_to "START", game_path(@game.id), class: 'buttons' %>
 
+ <%= javascript_pack_tag 'game_users_updates' %>
