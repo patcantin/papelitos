@@ -1,30 +1,36 @@
 
-<!-- SMALL PAPELITOS LOGO -->
-<%= image_tag "papelitos_logo.png", class: "small_logo" %>
 <span id="game-id" data-game-id="<%= @game.id %>"></span>
 
-<table>
-  <tr>
-    <td style="width:30%;">
-        <h1>TEAM 1</h1>
-        <hr>
-    </td>
-    <td style="width:30%;">
-        <h1>TEAM 2</h1>
-        <hr>
-    </td>
-  </tr>
-  <tr>
-    <td style="width:30%;">
-      <h1><ul id="team-1-players"></ul></h1>
-    </td>
-    <td style="width:30%;">
-      <h1><ul id="team-2-players"></ul></h1>
-    </td>
-  </tr>
-</table>
+<%= javascript_pack_tag 'game_users_updates' %>
 
+<!-- CARDS countainer -->
+<div class="d-flex justify-content-between">
+  <div class="card-team-player"> <!-- card for team 1 -->
+    <div class="card-header">
+      <%= image_tag "conejo.png", class: "team-pic" %>
+      <h1 class="team-name">Team 1</h1>
+    </div>
+    <!-- loop over users of team 1 -->
+    <div class="card-team">
+      <ul id="team-1-players"></ul>
+    </div>
+  </div>
+  <div class="card-team-player"> <!-- card for team 2 -->
+    <div class="card-header">
+      <%= image_tag "perro.png", class: "team-pic" %>
+      <h1 class="team-name">Team 2</h1>
+    </div>
+    <!-- loop over users of team 2 -->
+    <div class="card-team">
+      <ul id="team-2-players"></ul>
+    </div>
+  </div>
+</div>
 
-      <%= link_to "START", game_path(@game.id), class: 'buttons' %>
-
- <%= javascript_pack_tag 'game_users_updates' %>
+<!-- READY BUTTON -->
+<% if @game_user == 1 %>
+  <div class="bottom-right">
+    <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
+    <%= image_tag "", class: "fas fa-angle-double-right" %>
+  </div>
+<% end %>
