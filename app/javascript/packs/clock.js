@@ -15,10 +15,9 @@ if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
   }, 900);
 }
 
-$('#js-startTimer').click(function () {
   $('.js-timeout').text("60");
   countdown();
-});
+
 
 
 // $('#js-resetTimer').click(function () {

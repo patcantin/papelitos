@@ -1,3 +1,10 @@
+
+<!-- To create json into our controllers. Associates every game-user in this page to the game id -->
+<span id="game-id" data-game-id="<%= @game.id %>"></span>
+<!-- game_user index allow to make a real time refresh -->
+<%= javascript_pack_tag 'game_users_updates' %>
+
+<!-- CARDS countainer -->
 <div class="d-flex justify-content-between">
   <div class="card-team-player"> <!-- card for team 1 -->
     <div class="card-header">
@@ -6,11 +13,7 @@
     </div>
     <!-- loop over users of team 1 -->
     <div class="card-team">
-      <% @game_users.each do |u| %>
-        <% if u.game_team == @game.game_teams.first %>
-          <li><%= u.user.name %></li>
-        <% end %>
-      <% end %>
+      <ul id="team-1-players"></ul>
     </div>
   </div>
   <div class="card-team-player"> <!-- card for team 2 -->
@@ -20,11 +23,7 @@
     </div>
     <!-- loop over users of team 2 -->
     <div class="card-team">
-    <% @game_users.each do |u| %>
-      <% if u.game_team == @game.game_teams.second %>
-        <li><%= u.user.name %></li>
-      <% end %>
-    <% end %>
+      <ul id="team-2-players"></ul>
     </div>
   </div>
 </div>
