@@ -29,7 +29,7 @@
 </div>
 
 <!-- READY BUTTON -->
-<% if @game_user == 1 %>
+<% if @game.game_users.first.user_id == current_user.id %>
   <div class="bottom-right">
     <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
     <%= image_tag "", class: "fas fa-angle-double-right" %>
