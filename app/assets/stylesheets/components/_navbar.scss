@@ -2,10 +2,14 @@
   justify-content: flex-end;
 }
 
-
-// .user-name{
-//   float: right;
-//   }
+.avatar-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+span {
+  margin-left: 10px;
+}
+}
 
 // .nav-link{
 //   text-decoration: none;

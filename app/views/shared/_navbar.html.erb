@@ -7,10 +7,17 @@
   <% end %>
   <!-- avatar -->
   <% if current_user.photo.attached? %>
+  <div class= "avatar-name">
     <%= cl_image_tag current_user.photo.key, class: "user-avatar" %>
-  <% else %>
     <!-- username -->
-    <p class="user-name"><%= current_user.name %></p>
+    <span class="user-name"><%= current_user.name %></span>
+  </div>
+    <% else %>
+    <div>
+    <%= image_tag "avatar.png", class: "user-avatar" %>
+     <!-- username -->
+    <span class="user-name"><%= current_user.name %></span>
+  </div>
   <% end %>
 <% end %>
 </div>
