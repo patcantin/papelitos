@@ -14,9 +14,9 @@
   </div>
     <% else %>
     <div>
-    <%= image_tag "avatar.png", class: "user-avatar" %>
-     <!-- username -->
+    <!-- username -->
     <span class="user-name"><%= current_user.name %></span>
+    <%= image_tag "avatar.png", class: "user-avatar" %>
   </div>
   <% end %>
 <% end %>
