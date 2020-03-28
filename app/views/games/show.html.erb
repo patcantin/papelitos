@@ -1,5 +1,10 @@
 
-<span id="game-id" data-game-id="<%= @game.id %>"></span>
+<span id="game-state"
+ data-game-id="<%= @game.id %>"
+ data-game-team="<%= current_user.game_teams.last.id %>"
+ data-game-words="<%= @game_words %>"
+ data-game-users="<%= @game_users %>"
+ ></span>
 
 <!-- Span tags render json.html format game info -->
 <p>Round: <span id="round-name"></span></p>
@@ -9,10 +14,8 @@
 <% if @game.game_users.first.user_id == current_user.id %>
   <p>Current Word: <span id="current-word"></span></p>
   <p>You are playing <span id="you-are-playing"></span></p>
-  <%= simple_form_for @game.game_users.first.game_team do |f| %>
-    <!-- score +1 button -->
-    <%= f.submit "Got it! +1", class: "buttons join-button" %>
-  <% end %>
+
+  <button class="buttons join-button" id="increase-score">Got it! +1</button>
 <% else %>
 <!-- what every other players sees -->
   <p><span id="who-is-playing"></span> is playing</p>
@@ -32,7 +35,7 @@
 
 <!-- jAVASCRIPT PACK TAGS -->
 <%= javascript_pack_tag 'game_updates' %>
-<%= javascript_pack_tag 'clock' %>
+<%#= javascript_pack_tag 'clock' %>
 <%= javascript_pack_tag 'noizes' %>
 
 <!-- if @game.game_words.where(status.true).count == 0 -->
