@@ -6,25 +6,18 @@
 @import "footer";
 @import "logo";
 @import "inputs";
+@import "card";
 @import "round_show";
-
 
 body{
   background-color: $background-pink;
   font-family: $headers-font;
   color: $warm-orange;
-  padding: 20px;
-  max-width: 770px;
-  margin: 0 auto;
+  // padding: 20px;
+  // max-width: 770px;
+  // margin: 0 auto;
 }
 
-// LOGO BIG SIZE
-.index_logo{
-  width: 80%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 //----hide join button form before js onclick--//
 .hide-form{
@@ -37,4 +30,9 @@ body{
   text-align: center;
   margin: 10px 10px 20px;
   width: auto;
+}
+
+.body-container{
+  width: 90%;
+  margin: auto;
 }
