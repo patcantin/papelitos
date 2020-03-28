@@ -5,18 +5,16 @@ class GameUsersController < ApplicationController
         # if the browser requested HTML then render HTML response -> app/views/game_users/index.html.erb
         format.html do
           @game_users = GameUser.all
+          @game_teams = GameTeam.all
         end
         # if the browser requested JSON then send back JSON
         format.json do
-          team_1_players =  u.user.name
-          team_2_players =  u.user.name
-
-          render json: {
-            team_1_players: team_1_players,
-            team_2_players: team_2_players
-          }
+        team_players = u.user.name
+        render json: {
+          team_players: team_players
+        }
+        end
       end
-    end
   end
 
   def create

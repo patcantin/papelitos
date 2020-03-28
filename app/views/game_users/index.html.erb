@@ -17,14 +17,14 @@
     <td style="width:30%;">
     <% @game_users.each do |u| %>
       <% if u.game_team == @game.game_teams.first %>
-        <h1><span id="team-1-players"></span></h1>
+        <h1><span id="team-players"></span></h1>
       <% end %>
     <% end %>
     </td>
     <td style="width:30%;">
       <% @game_users.each do |u| %>
 <% if u.game_team == @game.game_teams.second %>
-  <h1><span id="team-2-players"></span></h1>
+  <h1><span id="team-players"></span></h1>
  <% end %>
 <% end %>
     </td>

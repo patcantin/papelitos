@@ -1,7 +1,7 @@
 import { csrfToken } from "@rails/ujs";
 
-const teamOnePlayers = document.querySelector("#team-1-players");
-const teamTwoPlayers = document.querySelector("#team-2-players");
+const teamPlayers = document.querySelector("#team-players");
+
 const gameId = document.querySelector("#game-id").dataset.gameId;
 setInterval(() => {
   fetch(`/games/${gameId}`, {
@@ -15,8 +15,7 @@ setInterval(() => {
     .then(response => response.json())
     .then((data) => {
       // console.log(data);
-      teamOnePlayers.innerHTML = data.team_1_players;
-      teamTwoPlayers.innerHTML = data.team_2_players;
+      teamPlayers.innerHTML = data.team_players;
     });
 }, 1000);
 

@@ -34,7 +34,7 @@ class GamesController < ApplicationController
         round_now = @game.round
         who_play = @game.game_users.first.user.name
         playing_now = @game.game_users.first.user.name
-        team_playing = @game.game_users.first.game_team.id
+        team_playing = @game.game_users.first.game_team_id
 
         render json: {
           current_word: current_word.name,
@@ -44,7 +44,7 @@ class GamesController < ApplicationController
           seconds_left: "",
           team_1_points: team_1_score,
           team_2_points: team_2_score,
-          round_now: round_now
+          round_name: round_now
         }
       end
     end
