@@ -1,7 +1,7 @@
 import { csrfToken } from '@rails/ujs';
 const increaseScrore = document.getElementById('increase-score');
 const currentWord = document.querySelector('#current-word');
-const yourTeamIsPlaying = document.querySelector('#your-team-is-playing');
+const teamPlaying = document.querySelector('#team-playing');
 const youArePlaying = document.querySelector('#you-are-playing');
 const whoIsPlaying = document.querySelector('#who-is-playing');
 const secondsLeft = document.querySelector('#seconds-left');
@@ -25,7 +25,7 @@ setInterval(() => {
   })
     .then(response => response.json())
     .then((data) => {
-      if (yourTeamIsPlaying) yourTeamIsPlaying.innerHTML = data.your_team_is_playing;
+      if (teamPlaying) teamPlaying.innerHTML = data.team_playing;
       if (youArePlaying) youArePlaying.innerHTML = data.you_are_playing;
       if (secondsLeft) secondsLeft.innerHTML = data.seconds_left;
       if (teamOnePoints) teamOnePoints.innerHTML = data.team_1_points;

@@ -38,7 +38,7 @@ class GamesController < ApplicationController
 
         render json: {
           # current_word: current_word.name,
-          your_team_is_playing: team_playing,
+          team_playing: team_playing,
           who_is_playing: who_play,
           you_are_playing: playing_now,
           seconds_left: "",
