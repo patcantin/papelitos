@@ -16,6 +16,7 @@
   <p>You are playing <span id="you-are-playing"></span></p>
 
   <button class="buttons join-button" id="increase-score">Got it! +1</button>
+  <button class="buttons join-button hide hide_button" id="change_user">Next Player</button>
 <% else %>
 <!-- what every other players sees -->
   <p><span id="who-is-playing"></span> is playing</p>
@@ -32,6 +33,7 @@
   <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
   <audio id="rock-on" src="buzzer.wav"></audio>
 <% end %>
+
 
 <!-- jAVASCRIPT PACK TAGS -->
 <%= javascript_pack_tag 'game_updates' %>
