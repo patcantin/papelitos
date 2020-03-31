@@ -11,7 +11,12 @@
   <p>You are playing <span id="you-are-playing"></span></p>
   <%= simple_form_for @game.game_users.first.game_team do |f| %>
     <!-- score +1 button -->
-    <%= f.submit "Got it! +1", class: "buttons join-button" %>
+    <div class= "round-countainer">
+    <%= button_tag type: 'submit', class: "round-btn1" do %> <i class="fas fa-check"></i>
+    <% end %>
+    <%= button_tag type: 'submit', class: "round-btn2" do %> <i class="fas fa-times"></i>
+    <% end %>
+    </div>
   <% end %>
 <% else %>
 <!-- what every other players sees -->
