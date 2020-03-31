@@ -46,3 +46,51 @@ letter-spacing: 2px;
     font-size: 30px;
   }
 }
+
+// Round button
+
+.round-btn1 {
+  font-size: 30px;
+position: absolute;
+border-radius: 50%;
+width: 70px;
+height: 70px;
+background-color: #FFA372;
+border: none;
+color: #B52C66;
+padding: 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+// background: url(thumbs-up.png);
+margin-right: 90px;
+margin-left: 150px;
+.fas fa-check {
+  font-size: 90px;
+}
+}
+
+.round-btn2 {
+position: absolute;
+border-radius: 50%;
+width: 70px;
+height: 70px;
+background-color: #FFA372;
+border: none;
+color: #B52C66;
+padding: 20px;
+align-items: center;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+// background: url(thumbs-up.png);
+}
+
+.round-countainer{
+  display: block;
+  justify-content: center;
+  position: relative;
+
+}

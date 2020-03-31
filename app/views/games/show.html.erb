@@ -15,8 +15,20 @@
   <p>Current Word: <span id="current-word"></span></p>
   <p>You are playing <span id="you-are-playing"></span></p>
 
+  <%= simple_form_for @game.game_users.first.game_team do |f| %>
+    <!-- score +1 button -->
+    <div class= "round-countainer">
+    <%= button_tag type: 'submit', class: "round-btn1" do %> <i class="fas fa-check"></i>
+    <% end %>
+    <%= button_tag type: 'submit', class: "round-btn2" do %> <i class="fas fa-times"></i>
+    <% end %>
+    </div>
+  <% end %>
+
+  <!-- WHAT IS IT? DO WE KEEP IT? -->
   <button class="buttons join-button" id="increase-score">Got it! +1</button>
   <button class="buttons join-button hide hide_button" id="change_user">Next Player</button>
+
 <% else %>
 <!-- what every other players sees -->
   <p><span id="who-is-playing"></span> is playing</p>
