@@ -47,7 +47,7 @@ letter-spacing: 2px;
   }
 }
 
-// START BUTTON - test 1
+// ---- START BUTTON ----
 .start-btn {
   width: 200px;
   height: 200px;
@@ -68,54 +68,4 @@ letter-spacing: 2px;
 .start-btn:hover{
     background-image: radial-gradient(#ff5900 2%, #ff6a1a 4%, #ff8b4d 6%, $input-pink 80%);
 }
-
-
-
-
-// Round button for skip and check
-// .round-btn1 {
-// font-size: 30px;
-// position: absolute;
-// border-radius: 50%;
-// width: 70px;
-// height: 70px;
-// background-color: #FFA372;
-// border: none;
-// color: #B52C66;
-// padding: 20px;
-// text-align: center;
-// text-decoration: none;
-// display: inline-block;
-// font-size: 16px;
-// // background: url(thumbs-up.png);
-// margin-right: 90px;
-// margin-left: 150px;
-
-// .fa-check {
-//   font-size: 50px;
-// }
-// }
-
-// .round-btn2 {
-// position: absolute;
-// border-radius: 50%;
-// width: 70px;
-// height: 70px;
-// background-color: #FFA372;
-// border: none;
-// color: #B52C66;
-// padding: 20px;
-// align-items: center;
-// text-align: center;
-// text-decoration: none;
-// display: inline-block;
-// font-size: 16px;
-// // background: url(thumbs-up.png);
-// }
-
-// .round-countainer{
-//   display: block;
-//   justify-content: center;
-//   position: relative;
-
-// }
+// ---- end of START BUTTON ----
