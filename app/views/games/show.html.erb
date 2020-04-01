@@ -10,6 +10,9 @@
 <p>Round: <span id="round-name"></span></p>
 <p>Team playing: <span id="team-playing"></span></p>
 
+<!-- START BUTTON -- From Morgane, to delete later -->
+<button class="start-btn">START</button>
+
 <!-- content shows if current user play -->
 <% if @game.game_users.first.user_id == current_user.id %>
   <p>Current Word: <span id="current-word"></span></p>
