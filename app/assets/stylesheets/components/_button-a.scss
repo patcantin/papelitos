@@ -47,50 +47,25 @@ letter-spacing: 2px;
   }
 }
 
-// Round button
-
-.round-btn1 {
-  font-size: 30px;
-position: absolute;
-border-radius: 50%;
-width: 70px;
-height: 70px;
-background-color: #FFA372;
-border: none;
-color: #B52C66;
-padding: 20px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-// background: url(thumbs-up.png);
-margin-right: 90px;
-margin-left: 150px;
-.fas fa-check {
-  font-size: 90px;
-}
+// ---- START BUTTON ----
+.start-btn {
+  width: 200px;
+  height: 200px;
+  font-family: $headers-font;
+  font-size: 40px;
+  font-weight: bolder;
+  color: $background-pink;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 7px #cf3072;
+  border: 0px;
+  border-radius: 50%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-image: linear-gradient(to bottom right, $input-pink, $warm-orange);
 }
 
-.round-btn2 {
-position: absolute;
-border-radius: 50%;
-width: 70px;
-height: 70px;
-background-color: #FFA372;
-border: none;
-color: #B52C66;
-padding: 20px;
-align-items: center;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-// background: url(thumbs-up.png);
+.start-btn:hover{
+    background-image: radial-gradient(#ff5900 2%, #ff6a1a 4%, #ff8b4d 6%, $input-pink 80%);
 }
-
-.round-countainer{
-  display: block;
-  justify-content: center;
-  position: relative;
-
-}
+// ---- end of START BUTTON ----
