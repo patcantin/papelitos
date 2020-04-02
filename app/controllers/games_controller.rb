@@ -6,7 +6,7 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(user: current_user, seconds_left: 100)
+    @game = Game.new(user: current_user, seconds_left: 60, started: false)
     if @game.save
       @game_user = GameUser.new(user: current_user, game: @game, active: true) # host will be the first to play
       hosts_team = GameTeam.create!(game: @game, score: 0, active: true) # host's team stats
@@ -20,6 +20,9 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    if @game.started == false && @game.user == current_user
+      @game.update(started: true)
+    end
     @playing_user = @game.game_users.joins(:game_team).find_by(active: true, game_teams: { active: true }).user
 
     respond_to do |format|
