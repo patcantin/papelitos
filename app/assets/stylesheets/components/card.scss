@@ -16,9 +16,19 @@ padding: 10px;
 width: 100%;
 }
 
-.card-team li{
+
+#team-1-players {
   list-style-type: none;
+  text-align: left;
+  padding-left: 5px !important;
 }
+
+// li{
+// display:inline;
+// margin: 0;
+// display: inline;
+// list-style: none;
+// }
 
 .card-team-player {
   width: 46%;
