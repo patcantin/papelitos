@@ -1,4 +1,4 @@
-<!-- Realtime javasript DO NOT DELETE!!! -->
+
 <span id="game-state"
  data-game-id="<%= @game.id %>"
  data-game-team="<%= current_user.game_teams.last.id %>"
@@ -14,12 +14,11 @@
 <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
   <p>Current Word: <span id="current-word"></span></p>
 
-  <!-- WHAT IS IT? DO WE KEEP IT? -->
   <button class="buttons join-button" id="increase-score">Got it! +1</button>
   <button class="buttons join-button" id="skip-button">Skip</button>
+  <%# <button class="buttons join-button hide hide_button" id="change_user">Next Player</button> %>
 </div>
 
-<% else %>
 <!-- what every other players sees -->
 <div id="inactive-player" style="display: <%= @playing_user != current_user ? "initial" : "none" %>;">
   <p><span id="who-is-playing"></span> is playing</p>

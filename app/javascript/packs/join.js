@@ -1,9 +1,10 @@
 const join = document.querySelector(".join-button");
+const form = document.querySelector(".join-form");
 
-
-join.addEventListener("click", (event) => {
-  const form = document.querySelector(".join-form");
-  form.classList.remove("hide-form");
-});
+if (form) {
+  join.addEventListener("click", (event) => {
+    form.classList.remove("hide-form");
+  });
+}
 
 
