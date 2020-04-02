@@ -22,6 +22,10 @@ width: 100%;
 
 .card-team-player {
   width: 46%;
+
+  h5{
+    text-transform: uppercase;
+  }
 }
 
 .team-pic{
@@ -39,4 +43,10 @@ width: 100%;
   font-size: 20px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+// design for horizontale line
+.horizontal-line{
+  background-color: $dark-pink;
+  height: 0.5px;
 }
