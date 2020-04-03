@@ -31,7 +31,7 @@ class GameUsersController < ApplicationController
       @game_user.game_team = @game.game_teams.second
     end
 
-    if @game_user.game_team.game_users.count == 1
+    if @game_user.game_team.game_users.count == 0
       @game_user.active = true
     end
 
