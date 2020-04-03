@@ -10,6 +10,7 @@
 
   <p>Round: <span id="round-name"></span></p>
   <div class="card-player">
+  <div class="card-player">
     <%= image_tag "perro.png", class: "logo-team" %>
     <div id= "play-name">
       <h1>Team playing: <span id="team-playing"></span></h1>
@@ -17,7 +18,7 @@
     </div>
   </div>
 
-    <!---------- content shows if current user play ---------->
+  <!---------- content shows if current user play ---------->
   <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
   <h3><span class= "selected-word"id="current-word"></span></h3>
 
