@@ -28,16 +28,10 @@
   </div>
 </div>
 
+<!-- START BUTTON visible for master user-->
 <% if @game.user_id == current_user.id %>
-    <!-- START BUTTON -- From Morgane, to delete later -->
      <!-- <button class="start-btn">START</button> -->
      <%= link_to "Start", game_path(@game.id), class: 'start-btn' %>
 <% end %>
 
-
-<!-- READY BUTTON -->
-  <div class="bottom-right">
-    <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
-    <%= image_tag "", class: "fas fa-angle-double-right" %>
-  </div>
 <%= javascript_pack_tag 'game_users_updates' %>
