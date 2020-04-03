@@ -1,52 +1,23 @@
-<!-- CSS for the player screen -->
-<!-- <div class="container">
-    <div class= "card-player">
-      <%#= image_tag "perro.png", class: "logo-team" %>
-      <div id= "play-name">
-        <h1>Player name</h1>
-        <h2>TEAM 1</h2>
-      </div>
-    </div>
-  <h3 class="selected-word">DANCE</h3>
-</div> -->
-
-
-<span id="game-state"
- data-game-id="<%= @game.id %>"
- data-game-team="<%= current_user.game_teams.last.id %>"
- data-game-words="<%= @game_words %>"
- data-game-users="<%= @game_users %>"
- ></span>
-
- <!-- Span tags render json.html format game info -->
-<p>Round: <span id="round-name"></span></p>
-<p>Team playing: <span id="team-playing"></span></p>
-
-<!-- content shows if current user play -->
-<% if @game.game_users.first.user_id == current_user.id %>
- <p>Current Word: <span id="current-word"></span></p> -->
-  <p>You are playing <span id="you-are-playing"></span></p> -->
-
+<!-- Span tags render json.html format game info -->
 <div class="container">
   <!-- Realtime javasript DO NOT DELETE!!! -->
   <span id="game-state"
-   data-game-id="<%= @game.id %>"
-   data-game-team="<%= current_user.game_teams.last.id %>"
-   data-game-words="<%= @game_words %>"
-   data-game-users="<%= @game_users %>"
-   ></span>
-
-  <!-- Span tags render json.html format game info -->
+  data-game-id="<%= @game.id %>"
+  data-game-team="<%= current_user.game_teams.last.id %>"
+  data-game-words="<%= @game_words %>"
+  data-game-users="<%= @game_users %>"
+  ></span>
   <p>Round: <span id="round-name"></span></p>
-
-  <!-- START BUTTON -- From Morgane, to delete later -->
-  <button class="start-btn">START</button>
-
-  <p>Team playing: <span id="team-playing"></span></p>
-
+  <div class="card-player">
+    <%= image_tag "perro.png", class: "logo-team" %>
+    <div id= "play-name">
+      <h1>Team playing: <span id="team-playing"></span></h1>
+      <h2><span id="who-is-playing"></span> is playing</h2>
+    </div>
+  </div>
   <!---------- content shows if current user play ---------->
   <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
-    <p>Current Word: <span id="current-word"></span></p>
+  <h3><span class= "selected-word"id="current-word"></span></h3>
     <!-- SKIP AND OK Buttons -->
     <div class= "container">
       <button class="round-btn1" id="change_user"><i class="fas fa-times"></i></button>
@@ -54,12 +25,9 @@
     </div>
   </div>
   <!---------- End of content shows if current user play ---------->
-
-
   <!---------- START OF INACTIVE PLAYERS SCREEN ---------->
   <div id="inactive-player" style="display: <%= @playing_user != current_user ? "initial" : "none" %>;">
-
-  <!-- TEAM SCORES FOR EACH TEAM -->
+    <!-- TEAM SCORES FOR EACH TEAM -->
     <div class="d-flex">
       <!-- TEAM#1 -->
       <div class="card-team-player">
@@ -70,7 +38,7 @@
         </div>
         <h2><span id="team-1-points"></span></h2>
       </div>
-      <!-- TEAM#2 -->
+    <!-- TEAM#2 -->
       <div class="card-team-player">
         <div>
           <%= image_tag "perro.png", class: "team-pic" %>
@@ -80,51 +48,39 @@
         <h2><span id="team-2-points"></span></h2>
       </div>
     </div>
-
-    <!-- TIMER -->
-    <div class="c100 p25">
-      <h1><span class= "timer-num" id="seconds-left">60</span></h1>
-      <div class="slice">
-        <div class="bar"></div>
-        <div class="fill"></div>
-      </div>
-    </div>
-
-    <!-- BUZZER -->
+  <!-- BUZZER -->
     <%= audio_tag "buzzer.wav", class: "audio-play" %>
     <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
     <%# <audio id="rock-on" src="/buzzer.wav"></audio> %>
-
     <!-- Player that is currently playing -->
     <p><span id="who-is-playing"></span> is playing</p>
   </div>
   <!---------- END OF INACTIVE PLAYERS SCREEN ---------->
+  <!-- TIMER -->
+    <div class="c100 p25">
+      <h1><span class= "timer-num" id="seconds-left">60</span></h1>
+        <div class="slice">
+          <div class="bar"></div>
+          <div class="fill"></div>
+        </div>
+    </div>
 </div>
-
-
 <!-- jAVASCRIPT PACK TAGS -->
 <%= javascript_pack_tag 'game_updates' %>
 <%= javascript_pack_tag 'clock' %>
 <%= javascript_pack_tag 'noizes' %>
-
-
-
-
 <!-- if @game.game_words.where(status.true).count == 0 -->
 <!-- if current_user -->
 <!-- if not current_user -->
 <!-- if games.round > 3 -->
-
 <!-- @game
 @game.game-words
 @game.game-word.where(status:false)
 .where(status:true).count == 0
 "".sample
 -> def papelitos? end
-
 Game-user = status (boolean)
 -> meme principe que @game et connecter a @game pour permettre joueur de finir le round
-
 DB
 -> game-words (status -> boolean)
 -> games (started(bool), finished(bool), round(enum)) -->
