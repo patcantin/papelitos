@@ -11,10 +11,6 @@
   <!-- Round number and name -->
   <p>Round: <span id="round-name"></span></p>
 
-   <!-- BUZZER -->
-    <%= audio_tag "buzzer.wav", class: "audio-play" %>
-    <button class="buzzer-btn join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
-
   <!-- Current team and player that is making guess the words -->
   <div class="card-player">
     <%= image_tag "perro.png", class: "logo-team" %>
@@ -58,15 +54,9 @@
         <h2><span id="team-2-points"></span></h2>
       </div>
     </div>
-<<<<<<< HEAD
-
-    <!-- TIMER -->
-    <h1><span id="seconds-left">60</span></h1>
 
     <!-- BUZZER -->
-    <%#= audio_tag "buzzer.wav", class: "audio-play" %>
-    <!-- <button class="buzzer-btn join-button audioButton" type="button" id="buzz_sound">Buzzer</button> -->
-
+    <button class="buzzer-btn join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
     <%# <audio id="rock-on" src="/buzzer.wav"></audio> %>
     <!-- Player that is currently playing -->
     <p><span id="who-is-playing"></span> is playing</p>
