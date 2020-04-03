@@ -8,18 +8,24 @@
   data-game-users="<%= @game_users %>"
   ></span>
 
-
-  <p>Round: <span id="round-name"></span></p>
+  <!-- Current team and player that is making guess the words -->
   <div class="card-player">
     <div id="team-perro"><%= image_tag "perro.png", class: "logo-team" %></div>
     <div id="team-conejo"><%= image_tag "conejo.png", class: "logo-team" %></div>
     <div id= "play-name">
+      <h1>Team: <span id="team-playing"></span></h1>
       <h2><span id="who-is-playing"></span> is playing</h2>
     </div>
+      <!-- Round number and name -->
+    <div id= "style-round">
+      <h4>ROUND #1 <span id="round-name"></span></h4>
+    </div>
   </div>
+
   <!---------- content shows if current user play ---------->
   <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
-  <h3><span class= "selected-word"id="current-word"></span></h3>
+  <h3><span class= "selected-word" id="current-word"></span></h3>
+  <hr id="color-line">
     <!-- SKIP AND OK Buttons -->
     <div class= "container">
       <button class="round-btn1" id="skip-button"><i class="fas fa-times"></i></button>
@@ -27,6 +33,7 @@
     </div>
   </div>
   <!---------- End of content shows if current user play ---------->
+
   <!---------- START OF INACTIVE PLAYERS SCREEN ---------->
   <div id="inactive-player" style="display: <%= @playing_user != current_user ? "initial" : "none" %>;">
     <!-- TEAM SCORES FOR EACH TEAM -->
@@ -50,14 +57,15 @@
         <h2><span id="team-2-points"></span></h2>
       </div>
     </div>
-  <!-- BUZZER -->
-    <%= audio_tag "buzzer.wav", class: "audio-play" %>
-    <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
+
+    <!-- BUZZER -->
+    <button class="buzzer-btn join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
     <%# <audio id="rock-on" src="/buzzer.wav"></audio> %>
     <!-- Player that is currently playing -->
     <p><span id="who-is-playing"></span> is playing</p>
   </div>
   <!---------- END OF INACTIVE PLAYERS SCREEN ---------->
+
   <!-- TIMER -->
     <div class="c100 p25">
       <h1><span class= "timer-num" id="seconds-left">60</span></h1>
