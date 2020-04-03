@@ -10,6 +10,10 @@
   <!-- Span tags render json.html format game info -->
   <p>Round: <span id="round-name"></span></p>
 
+   <!-- BUZZER -->
+    <%= audio_tag "buzzer.wav", class: "audio-play" %>
+    <button class="buzzer-btn join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
+
   <!-- START BUTTON -- From Morgane, to delete later -->
   <button class="start-btn">START</button>
 
@@ -54,8 +58,8 @@
     <h1><span id="seconds-left">60</span></h1>
 
     <!-- BUZZER -->
-    <%= audio_tag "buzzer.wav", class: "audio-play" %>
-    <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
+    <%#= audio_tag "buzzer.wav", class: "audio-play" %>
+    <!-- <button class="buzzer-btn join-button audioButton" type="button" id="buzz_sound">Buzzer</button> -->
     <%# <audio id="rock-on" src="/buzzer.wav"></audio> %>
 
     <!-- Player that is currently playing -->
