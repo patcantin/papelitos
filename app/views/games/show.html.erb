@@ -24,6 +24,7 @@
   <!---------- content shows if current user play ---------->
   <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
   <h3><span class= "selected-word" id="current-word"></span></h3>
+  <hr id="color-line">
     <!-- SKIP AND OK Buttons -->
     <div class= "container">
       <button class="round-btn1" id="skip-button"><i class="fas fa-times"></i></button>
