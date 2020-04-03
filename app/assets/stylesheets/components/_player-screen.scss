@@ -2,14 +2,31 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 30px auto 40px auto;
+
+#round-name {
+  text-transform: capitalize;
+}
+
+h4 {
+  text-align: right;
+  font-size: 16px;
+}
+
+h3 {
+  text-align: center;
+
+}
 }
 
 .logo-team {
-  width: 90px;
+  width: 50px;
+  height: 50px;
 }
 
 #play-name {
   padding: 5px;
+  width: 80%;
 h1, h2 {
   font-size: 16px;
   margin: 5px;
@@ -19,11 +36,6 @@ h1, h2 {
 
 .selected-word {
   font-size: 30px;
-  text-align: center;
-  padding: 50px 0px 20px;
   text-transform: uppercase;
+  text-align: center;
 }
-
-
-
-
