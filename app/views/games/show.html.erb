@@ -1,5 +1,4 @@
 <!-- CSS for the player screen -->
-
 <!-- <div class="container">
     <div class= "card-player">
       <%= image_tag "perro.png", class: "logo-team" %>
@@ -12,31 +11,13 @@
 </div>
 
 
-<div class= "container">
-<button class="round-btn1" id="change_user"><i class="fas fa-times"></i></button>
-<button class="round-btn1" id="increase-score"><i class="fas fa-check"></i></button>
-</div>
-
-
-
-<div class="c100 p25">
-  <span class= "timer-num">25</span>
-  <div class="slice">
-    <div class="bar"></div>
-    <div class="fill"></div>
-  </div>
-</div> -->
-
-
   <!--  -->
-
-
 <span id="game-state"
  data-game-id="<%= @game.id %>"
  data-game-team="<%= current_user.game_teams.last.id %>"
  data-game-words="<%= @game_words %>"
  data-game-users="<%= @game_users %>"
- ></span> -->
+ ></span>
 
 <!-- Span tags render json.html format game info -->
 <p>Round: <span id="round-name"></span></p>
@@ -47,36 +28,79 @@
  <p>Current Word: <span id="current-word"></span></p> -->
   <p>You are playing <span id="you-are-playing"></span></p> -->
 
-  <%= simple_form_for @game.game_users.first.game_team do |f| %>
-    <!-- score +1 button -->
-    <div class= "round-countainer">
-    <%= button_tag type: 'submit', class: "round-btn1" do %> <i class="fas fa-check"></i>
-    <% end %>
-    <%= button_tag type: 'submit', class: "round-btn2" do %> <i class="fas fa-times"></i>
-    <% end %>
+<div class="container">
+  <!-- Realtime javasript DO NOT DELETE!!! -->
+  <span id="game-state"
+   data-game-id="<%= @game.id %>"
+   data-game-team="<%= current_user.game_teams.last.id %>"
+   data-game-words="<%= @game_words %>"
+   data-game-users="<%= @game_users %>"
+   ></span>
+
+  <!-- Span tags render json.html format game info -->
+  <p>Round: <span id="round-name"></span></p>
+
+  <!-- START BUTTON -- From Morgane, to delete later -->
+  <button class="start-btn">START</button>
+
+  <p>Team playing: <span id="team-playing"></span></p>
+
+  <!---------- content shows if current user play ---------->
+  <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
+    <p>Current Word: <span id="current-word"></span></p>
+    <!-- SKIP AND OK Buttons -->
+    <div class= "container">
+      <button class="round-btn1" id="change_user"><i class="fas fa-times"></i></button>
+      <button class="round-btn1" id="increase-score"><i class="fas fa-check"></i></button>
     </div>
-  <% end %>
+  </div>
+  <!---------- End of content shows if current user play ---------->
 
-  <!-- WHAT IS IT? DO WE KEEP IT? -->
-  <button class="buttons join-button" id="increase-score">Got it! +1</button>
-  <button class="buttons join-button hide hide_button" id="change_user">Next Player</button>
 
-<% else %>
-<!-- what every other players sees -->
-  <p><span id="who-is-playing"></span> is playing</p>
-  <!-- TIMER -->
-  <p>Seconds left: <span id="seconds-left">---</span></p>
-  <h1><span class="js-timeout">60</span></h1>
+  <!---------- START OF INACTIVE PLAYERS SCREEN ---------->
+  <div id="inactive-player" style="display: <%= @playing_user != current_user ? "initial" : "none" %>;">
 
-  <!-- sCORES for each team -->
-  <p>Score team 1<span id="team-1-points"></span></p>
-  <p>Score team 2<span id="team-2-points"></span></p>
+  <!-- TEAM SCORES FOR EACH TEAM -->
+    <div class="d-flex">
+      <!-- TEAM#1 -->
+      <div class="card-team-player">
+        <div>
+          <%= image_tag "conejo.png", class: "team-pic" %>
+          <h5>Team 1</h5>
+          <hr class="horizontal-line">
+        </div>
+        <h2><span id="team-1-points"></span></h2>
+      </div>
+      <!-- TEAM#2 -->
+      <div class="card-team-player">
+        <div>
+          <%= image_tag "perro.png", class: "team-pic" %>
+          <h5>Team 2</h5>
+          <hr class="horizontal-line">
+        </div>
+        <h2><span id="team-2-points"></span></h2>
+      </div>
+    </div>
 
-  <!-- BUZZER -->
-  <%= audio_tag "buzzer.wav", class: "audio-play" %>
-  <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
-  <audio id="rock-on" src="buzzer.wav"></audio>
-<% end %>
+    <!-- TIMER -->
+    <div class="c100 p25">
+      <h1><span class= "timer-num" id="seconds-left">60</span></h1>
+      <div class="slice">
+        <div class="bar"></div>
+      <div class="fill"></div>
+    </div>
+</div>
+
+    <!-- BUZZER -->
+    <%= audio_tag "buzzer.wav", class: "audio-play" %>
+    <button class="buttons join-button audioButton" type="button" id="buzz_sound">Buzzer</button>
+    <%# <audio id="rock-on" src="/buzzer.wav"></audio> %>
+
+    <!-- Player that is currently playing -->
+    <p><span id="who-is-playing"></span> is playing</p>
+  </div>
+  <!---------- END OF INACTIVE PLAYERS SCREEN ---------->
+</div>
 
 
 <!-- jAVASCRIPT PACK TAGS -->
