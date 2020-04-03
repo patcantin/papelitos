@@ -74,6 +74,8 @@ letter-spacing: 2px;
 
 // ---- BUZZER BUTTON ---
 .buzzer-btn{
+  width: 60%;
+  height: 40px;
   color: $dark-pink;
   font-size: 24px;
   letter-spacing: 4px;
@@ -82,6 +84,7 @@ letter-spacing: 2px;
   background: $warm-orange;
   border-radius: 8px;
   border: none;
+  box-shadow: 4px 3px 3px $input-pink;
 
   &:hover{
   animation: shake 0.5s;
