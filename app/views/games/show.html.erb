@@ -1,17 +1,16 @@
 <!-- CSS for the player screen -->
 <!-- <div class="container">
     <div class= "card-player">
-      <%= image_tag "perro.png", class: "logo-team" %>
+      <%#= image_tag "perro.png", class: "logo-team" %>
       <div id= "play-name">
         <h1>Player name</h1>
         <h2>TEAM 1</h2>
       </div>
     </div>
   <h3 class="selected-word">DANCE</h3>
-</div>
+</div> -->
 
 
-  <!--  -->
 <span id="game-state"
  data-game-id="<%= @game.id %>"
  data-game-team="<%= current_user.game_teams.last.id %>"
@@ -19,9 +18,9 @@
  data-game-users="<%= @game_users %>"
  ></span>
 
-<!-- Span tags render json.html format game info -->
+ <!-- Span tags render json.html format game info -->
 <p>Round: <span id="round-name"></span></p>
-<p>Team playing: <span id="team-playing"></span></p> -->
+<p>Team playing: <span id="team-playing"></span></p>
 
 <!-- content shows if current user play -->
 <% if @game.game_users.first.user_id == current_user.id %>
@@ -87,9 +86,9 @@
       <h1><span class= "timer-num" id="seconds-left">60</span></h1>
       <div class="slice">
         <div class="bar"></div>
-      <div class="fill"></div>
+        <div class="fill"></div>
+      </div>
     </div>
-</div>
 
     <!-- BUZZER -->
     <%= audio_tag "buzzer.wav", class: "audio-play" %>
