@@ -24,7 +24,7 @@ class GamesController < ApplicationController
       @game.update(started: true)
     end
     @playing_user = @game.game_users.joins(:game_team).find_by(active: true, game_teams: { active: true }).user
-
+    @on_play = @game.game_teams.find_by(active: true).id
     respond_to do |format|
       # if the browser requested HTML then render HTML response -> app/views/games/show.html.erb
       format.html do
@@ -40,6 +40,8 @@ class GamesController < ApplicationController
         who_play = @playing_user.name
         playing_now = @playing_user == current_user
         team_playing = @game.game_teams.find_by(active: true).id
+        team_perro = @on_play != @game.game_teams.last.id
+        team_conejo = @on_play == @game.game_teams.last.id
 
         render json: {
           # current_word: current_word.name,
@@ -49,7 +51,9 @@ class GamesController < ApplicationController
           seconds_left: @game.seconds_left,
           team_1_points: team_1_score,
           team_2_points: team_2_score,
-          round_name: round_now
+          round_name: round_now,
+          animal_perro_icon: team_perro,
+          animal_conejo_icon: team_conejo
         }
       end
     end

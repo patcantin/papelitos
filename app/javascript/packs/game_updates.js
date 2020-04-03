@@ -12,6 +12,8 @@ const teamTwoPoints  = document.querySelector('#team-2-points');
 const roundName      = document.querySelector('#round-name');
 const gameState      = document.getElementById('game-state');
 const skipButton     = document.getElementById('skip-button');
+const teamPerro     = document.getElementById('team-perro');
+const teamConejo     = document.getElementById('team-conejo');
 
 if (gameState) {
   const gameId = gameState.dataset.gameId;
@@ -38,6 +40,19 @@ if (gameState) {
         activePlayer.style.display = "none";
         inactivePlayer.style.display = "initial";
       }
+
+      if (data.animal_perro_icon) {
+        teamPerro.style.display = "initial";
+      } else {
+        teamPerro.style.display = "none";
+      }
+
+      if (data.animal_conejo_icon) {
+        teamConejo.style.display = "initial";
+      } else {
+        teamConejo.style.display = "none";
+      }
+
 
       secondsLeft.innerHTML = data.seconds_left;
       teamOnePoints.innerHTML = data.team_1_points;
