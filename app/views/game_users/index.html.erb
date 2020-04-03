@@ -32,6 +32,11 @@
 <% if @game.user_id == current_user.id %>
      <!-- <button class="start-btn">START</button> -->
      <%= link_to "Start", game_path(@game.id), class: 'start-btn' %>
+<% else %>
+  <div class="bottom-right">
+    <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
+    <%= image_tag "", class: "fas fa-angle-double-right" %>
+  </div>
 <% end %>
 
 <%= javascript_pack_tag 'game_users_updates' %>
