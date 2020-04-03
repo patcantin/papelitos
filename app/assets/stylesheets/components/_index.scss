@@ -8,6 +8,10 @@
 @import "inputs";
 @import "card";
 @import "round_show";
+@import "player-screen";
+@import "circle";
+
+
 
 body{
   background-color: $background-pink;
@@ -26,9 +30,9 @@ body{
 
 // container
 .container{
-  padding: 10px 10px 20px;
+  padding: 5px 5px 10px;
   text-align: center;
-  margin: 10px 10px 20px;
+  margin: 5px 5px 10px;
   width: auto;
 }
 

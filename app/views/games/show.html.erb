@@ -1,19 +1,51 @@
+<!-- CSS for the player screen -->
+
+<!-- <div class="container">
+    <div class= "card-player">
+      <%= image_tag "perro.png", class: "logo-team" %>
+      <div id= "play-name">
+        <h1>Player name</h1>
+        <h2>TEAM 1</h2>
+      </div>
+    </div>
+  <h3 class="selected-word">DANCE</h3>
+</div>
+
+
+<div class= "container">
+<button class="round-btn1" id="change_user"><i class="fas fa-times"></i></button>
+<button class="round-btn1" id="increase-score"><i class="fas fa-check"></i></button>
+</div>
+
+
+
+<div class="c100 p25">
+  <span class= "timer-num">25</span>
+  <div class="slice">
+    <div class="bar"></div>
+    <div class="fill"></div>
+  </div>
+</div> -->
+
+
+  <!--  -->
+
 
 <span id="game-state"
  data-game-id="<%= @game.id %>"
  data-game-team="<%= current_user.game_teams.last.id %>"
  data-game-words="<%= @game_words %>"
  data-game-users="<%= @game_users %>"
- ></span>
+ ></span> -->
 
 <!-- Span tags render json.html format game info -->
 <p>Round: <span id="round-name"></span></p>
-<p>Team playing: <span id="team-playing"></span></p>
+<p>Team playing: <span id="team-playing"></span></p> -->
 
 <!-- content shows if current user play -->
 <% if @game.game_users.first.user_id == current_user.id %>
-  <p>Current Word: <span id="current-word"></span></p>
-  <p>You are playing <span id="you-are-playing"></span></p>
+ <p>Current Word: <span id="current-word"></span></p> -->
+  <p>You are playing <span id="you-are-playing"></span></p> -->
 
   <%= simple_form_for @game.game_users.first.game_team do |f| %>
     <!-- score +1 button -->
@@ -51,6 +83,9 @@
 <%= javascript_pack_tag 'game_updates' %>
 <%= javascript_pack_tag 'clock' %>
 <%= javascript_pack_tag 'noizes' %>
+
+
+
 
 <!-- if @game.game_words.where(status.true).count == 0 -->
 <!-- if current_user -->
