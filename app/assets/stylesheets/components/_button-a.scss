@@ -48,6 +48,22 @@ letter-spacing: 2px;
   }
 }
 
+// Round button skip and ok
+.round-btn1 {
+border-radius: 50%;
+width: 70px;
+height: 70px;
+background-color: #FFA372;
+border: none;
+color: #B52C66;
+margin: 10px;
+
+.fa-check, .fa-times {
+  font-size: 50px;
+  justify-content: left;
+}
+}
+
 // ---- START BUTTON ----
 .start-btn {
   width: 200px;
