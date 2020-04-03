@@ -30,9 +30,9 @@
 
 <!-- START BUTTON visible for master user-->
 <% if @game.user_id == current_user.id %>
-     <!-- <button class="start-btn">START</button> -->
-     <%= link_to "Start", game_path(@game.id), class: 'start-btn' %>
+  <div id= 'start-btn'><%= link_to "Start", game_path(@game.id) %></div>
 <% else %>
+<!-- READY button visible for other players -->
   <div class="bottom-right">
     <%= link_to "Ready", game_path(@game.id), class: 'btn-bottom-right' %>
     <%= image_tag "", class: "fas fa-angle-double-right" %>

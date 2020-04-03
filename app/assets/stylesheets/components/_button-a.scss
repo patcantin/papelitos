@@ -65,25 +65,34 @@ margin: 20px;
 }
 
 // ---- START BUTTON ----
-.start-btn {
-  width: 200px;
-  height: 200px;
-  font-family: $headers-font;
-  font-size: 40px;
-  font-weight: bolder;
-  color: $background-pink;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  text-shadow: 2px 2px 7px #cf3072;
+#start-btn {
+  width: 160px;
+  height: 160px;
   border: 0px;
   border-radius: 50%;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background-image: linear-gradient(to bottom right, $input-pink, $warm-orange);
-}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  box-shadow: 4px  #2c0726;
 
-.start-btn:hover{
+
+    &:hover{
     background-image: radial-gradient(#ff5900 2%, #ff6a1a 4%, #ff8b4d 6%, $input-pink 80%);
+  }
+
+    a{
+      font-size: 35px;
+      font-family: $headers-font;
+      font-weight: bold;
+      color: $dark-pink;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 2px 2px 7px #cf3072;
+    }
 }
 // ---- end of START BUTTON ----
 
