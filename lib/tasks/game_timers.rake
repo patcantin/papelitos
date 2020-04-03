@@ -8,7 +8,7 @@ namespace :game_timers do
           game.next_round!
         end
 
-        sleep 1
+        sleep 0.1
       end
     end
   end
