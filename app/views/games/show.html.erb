@@ -16,8 +16,8 @@
   <!---------- content shows if current user play ---------->
   <div id="active-player" style="display: <%= @playing_user == current_user ? "initial" : "none" %>;">
   <div class="card-player">
-    <div id="team-perro"><%= image_tag "perro.png", class: "logo-team" %></div>
-    <div id="team-conejo"><%= image_tag "conejo.png", class: "logo-team" %></div>
+    <div id="team-perro" style="display: <%= @team_perro ? "initial" : "none" %>;"><%= image_tag "perro.png", class: "logo-team" %></div>
+    <div id="team-conejo" style="display: <%= @team_conejo ? "initial" : "none" %>;"><%= image_tag "conejo.png", class: "logo-team" %></div>
     <div id= "play-name">
       <h2>You are playing!</h2>
     </div>

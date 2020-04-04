@@ -6,7 +6,7 @@ class Game < ApplicationRecord
   has_many :game_teams, dependent: :destroy
 
   validates :key_number, uniqueness: true
-  enum round: { describe: 1, mime: 2, one_word: 3 }
+  enum round: { describe: 1, mime: 2, one_word: 3, done: 4 }
 
   before_create :generate_key, :set_round
 
@@ -53,6 +53,7 @@ class Game < ApplicationRecord
     case self.round
     when "describe" then "mime"
     when "mime" then "one_word"
+    when "one_word" then "done"
     else
       "describe"
     end

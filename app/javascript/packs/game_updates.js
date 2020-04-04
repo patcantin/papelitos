@@ -31,6 +31,11 @@ if (gameState) {
     })
     .then(response => response.json())
     .then((data) => {
+
+      if (data.round_name == "done"){
+        window.location.href = `/games/${gameId}/end`;
+      }
+
       if (teamPlaying) teamPlaying.innerHTML = data.team_playing;
 
       if (data.you_are_playing) {
