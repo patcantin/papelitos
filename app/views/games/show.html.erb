@@ -10,7 +10,7 @@
 
   <!-- Current team and player that is making guess the words -->
       <!-- Round number and name -->
-    <div id= "style-round">
+    <div id= "style-round" class="selected-word">
       <h4><span id="round-name"></span></h4>
     </div>
   <!---------- content shows if current user play ---------->
@@ -37,8 +37,6 @@
 
   <!---------- START OF INACTIVE PLAYERS SCREEN ---------->
   <div id="inactive-player" style="display: <%= @playing_user != current_user ? "initial" : "none" %>;">
-
-
     <!-- TEAM SCORES FOR EACH TEAM -->
     <div class="d-flex">
       <!-- TEAM#1 -->
