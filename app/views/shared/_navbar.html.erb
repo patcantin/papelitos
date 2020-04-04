@@ -1,23 +1,22 @@
 <div class="navbar">
-
-<% if current_user %>
-  <!-- Logo -->
-  <% unless controller_name == "games" && action_name == "index"%>
-    <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+  <% if current_user %>
+    <!-- Logo -->
+    <% unless controller_name == "games" && action_name == "index"%>
+      <%= image_tag "papelitos_logo.png", class: "small_logo" %>
+    <% end %>
+    <!-- avatar -->
+    <% if current_user.photo.attached? %>
+    <div class= "avatar-name">
+      <!-- username -->
+      <span class="user-name"><%= current_user.name %></span>
+      <%= cl_image_tag current_user.photo.key, class: "user-avatar" %>
+    </div>
+      <% else %>
+      <div>
+      <!-- username -->
+      <span class="user-name"><%= current_user.name %></span>
+      <%= image_tag "avatar.png", class: "user-avatar" %>
+    </div>
+    <% end %>
   <% end %>
-  <!-- avatar -->
-  <% if current_user.photo.attached? %>
-  <div class= "avatar-name">
-    <!-- username -->
-    <span class="user-name"><%= current_user.name %></span>
-    <%= cl_image_tag current_user.photo.key, class: "user-avatar" %>
-  </div>
-    <% else %>
-    <div>
-    <!-- username -->
-    <span class="user-name"><%= current_user.name %></span>
-    <%= image_tag "avatar.png", class: "user-avatar" %>
-  </div>
-  <% end %>
-<% end %>
 </div>

@@ -1,19 +1,16 @@
 .navbar{
   margin-top: 15px;
   justify-content: flex-end;
-  .body-container {
-  width: 90%;
-  margin: auto;
-  }
-}
 
-.avatar-name {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-span {
-  margin-right: 10px;
-}
+  .avatar-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  span {
+    margin-right: 10px;
+  }
 }
 
 // .nav-link{
