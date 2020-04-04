@@ -12,6 +12,11 @@
 @import "circle";
 @import "instructions";
 
+html{
+  position:relative;
+  height: 100%
+}
+
 body{
   background-color: $background-pink;
   font-family: $headers-font;
@@ -31,11 +36,12 @@ body{
 .container{
   padding: 5px 5px 10px;
   text-align: center;
-  margin: 5px 5px 10px;
+  margin: 0 auto;
   width: auto;
 }
 
 .body-container{
   width: 90%;
+  max-width: 700px;
   margin: auto;
 }
