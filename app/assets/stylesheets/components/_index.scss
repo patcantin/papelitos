@@ -17,16 +17,6 @@ html{
   height: 100%
 }
 
-body{
-  background-color: $background-pink;
-  font-family: $headers-font;
-  color: $warm-orange;
-  // padding: 20px;
-  // max-width: 770px;
-  // margin: 0 auto;
-}
-
-
 //----hide join button form before js onclick--//
 .hide-form{
   visibility: hidden;
@@ -36,12 +26,20 @@ body{
 .container{
   padding: 5px 5px 10px;
   text-align: center;
-  margin: 0 auto;
+  margin: 2% auto;
   width: auto;
+
+  #style-round h2{
+    text-align: center;
+    font-weight: bold;
+  }
 }
 
 .body-container{
   width: 90%;
   max-width: 700px;
   margin: auto;
+  background-color: $background-pink;
+  font-family: $headers-font;
+  color: $warm-orange;
 }
