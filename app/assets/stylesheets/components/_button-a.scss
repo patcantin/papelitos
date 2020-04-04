@@ -58,7 +58,7 @@ border: none;
 color: #B52C66;
 margin: 20px;
 box-shadow: 4px 3px 3px 1px #420b39d9;
-
+// :active will provide the pressed effect of the button
   &:active {
     box-shadow: 0 5px #420b39d9;
     transform: translateY(4px);
