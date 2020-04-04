@@ -78,21 +78,22 @@ margin: 20px;
   margin: 40px auto;
   box-shadow: 4px  #2c0726;
 
-
-    &:hover{
-    background-image: radial-gradient(#ff5900 2%, #ff6a1a 4%, #ff8b4d 6%, $input-pink 80%);
+  &:active{
+    box-shadow: 0 5px #420b39d9;
+    transform: translateY(4px);
   }
 
-    a{
-      font-size: 35px;
-      font-family: $headers-font;
-      font-weight: bold;
-      color: $dark-pink;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-align: center;
-      text-shadow: 2px 2px 7px #cf3072;
-    }
+  a{
+    font-size: 35px;
+    font-family: $headers-font;
+    font-weight: bold;
+    color: $dark-pink;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 2px 2px 7px #cf3072;
+    text-decoration: none;
+  }
 }
 // ---- end of START BUTTON ----
 
